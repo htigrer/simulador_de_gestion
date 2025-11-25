@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Gestion de Proyectos Informaticos</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    /* Reset y estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0eff7;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(85, 83, 248, 0.849);
+      padding: 40px 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    #loginBtn {
+      background: #fff;
+      color: #3F3D56;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    #loginBtn:hover {
+      background: #3F3D56;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Bienvenido</h1>
+    <p>Inicia sesión con Google para continuar</p>
+    <button id="loginBtn"><i class="fab fa-google"></i> Iniciar sesión con Google</button>
+    <footer>&copy; 2025 Gestion de Proyectos Informáticos</footer>
+  </div>
+
+  <!-- Firebase SDKs (forma tradicional - más compatible) -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAs_LBouq2njfy0cJHJjuiUfASC3RqVKkM",
+      authDomain: "practicas-comunitario.firebaseapp.com",
+      projectId: "practicas-comunitario",
+      storageBucket: "practicas-comunitario.firebasestorage.app",
+      messagingSenderId: "874017448238",
+      appId: "1:874017448238:web:03928054e98441838d1abf"
+    };
+
+    // Inicializar Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    // Función para inicializar el botón de login
+    function inicializarLogin() {
+      const loginBtn = document.getElementById("loginBtn");
+      
+      if (!loginBtn) {
+        console.error("Error: No se encontró el botón de login con id 'loginBtn'");
+        return;
+      }
+      
+      loginBtn.addEventListener("click", () => {
+        auth.signInWithPopup(provider)
+          .then(result => {
+            console.log("Usuario autenticado:", result.user);
+            alert(`Bienvenido ${result.user.displayName}`);
+            window.location.href = "preguntas.html";
+          })
+          .catch(error => {
+            console.error("Error login:", error);
+            alert(`Error al iniciar sesión: ${error.message}`);
+          });
+      });
+    }
+
+    // Esperar a que el DOM esté listo
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", inicializarLogin);
+    } else {
+      inicializarLogin();
+    }
+  </script>
+
+</body>
+</html>

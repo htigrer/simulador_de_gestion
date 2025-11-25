@@ -1,0 +1,283 @@
+[
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cómo influye una mala definición del alcance en el éxito de un proyecto informático?",
+    "opciones": [
+      "Reduce los costos si se omiten tareas no necesarias.",
+      "No afecta si el equipo es suficientemente experimentado.",
+      "Permite mayor flexibilidad en la planificación del cronograma.",
+      "Genera ambigüedad en entregables y retrasa decisiones clave."
+    ],
+    "respuesta": 3,
+    "explicacion": "Una mala definición del alcance genera ambigüedad en los entregables y retrasa decisiones clave del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Qué debe priorizar un gerente de proyecto cuando el presupuesto y tiempo son fijos, pero surge una nueva necesidad?",
+    "opciones": [
+      "Reevaluar el alcance y negociar con el patrocinador.",
+      "Suspender el proyecto hasta obtener más fondos.",
+      "Eliminar la necesidad sin documentarla.",
+      "Asignar más recursos sin aprobación."
+    ],
+    "respuesta": 0,
+    "explicacion": "Cuando el presupuesto y tiempo son fijos, se debe reevaluar el alcance y negociar con el patrocinador para gestionar la nueva necesidad."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es un atributo esencial del ciclo de vida de un proyecto según el enfoque PMBOK?",
+    "opciones": [
+      "Consiste en una única fase que agrupa todo el trabajo.",
+      "Consta de fases secuenciales como iniciación, planificación, ejecución, seguimiento y cierre.",
+      "Solo aplica a proyectos del sector público.",
+      "Es idéntico al ciclo de vida del producto generado."
+    ],
+    "respuesta": 1,
+    "explicacion": "El ciclo de vida según PMBOK consta de fases secuenciales: iniciación, planificación, ejecución, seguimiento y cierre."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es una diferencia clave entre proyectos y operaciones dentro de las organizaciones?",
+    "opciones": [
+      "Las operaciones tienen un alcance limitado",
+      "Los proyectos tienen procesos repetitivos",
+      "Los proyectos son esfuerzos temporales",
+      "Las operaciones producen productos únicos"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los proyectos son esfuerzos temporales, mientras que las operaciones son continuas y repetitivas."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es el objetivo principal de la fase de planificación en el ciclo de vida de un proyecto TI?",
+    "opciones": [
+      "Organizar y preparar los planes para ejecutar el proyecto",
+      "Establecer relaciones con los stakeholders",
+      "Cerrar contratos con proveedores",
+      "Desarrollar los entregables definidos"
+    ],
+    "respuesta": 0,
+    "explicacion": "La fase de planificación tiene como objetivo organizar y preparar todos los planes necesarios para ejecutar el proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es el propósito del Project Charter?",
+    "opciones": [
+      "Definir los entregables detallados del proyecto.",
+      "Dar al gerente del proyecto la autoridad para aplicar los recursos de la organización.",
+      "Autorizar formalmente la existencia de un proyecto.",
+      "Establecer el cronograma detallado del proyecto."
+    ],
+    "respuesta": 2,
+    "explicacion": "El Project Charter autoriza formalmente la existencia de un proyecto y otorga autoridad al gerente del proyecto."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Empareja cada concepto relacionado con la TIR:",
+    "pares": [
+      {
+        "izquierda": "TIR",
+        "derecha": "Tasa que iguala el valor presente de los flujos netos de efectivo al gasto inicial."
+      },
+      {
+        "izquierda": "Tasa de descuento",
+        "derecha": "Tasa mínima de rendimiento aceptada por la empresa."
+      },
+      {
+        "izquierda": "Flujos de efectivo descontados",
+        "derecha": "Flujos futuros de efectivo ajustados por la tasa de interés."
+      },
+      {
+        "izquierda": "Criterio de aceptación",
+        "derecha": "El proyecto es aceptado si la TIR es mayor que la tasa de descuento."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "La TIR es la tasa que iguala el valor presente de los flujos al gasto inicial, y el criterio de aceptación indica que el proyecto se acepta si la TIR es mayor que la tasa de descuento."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Empareja los grupos de procesos de gestión de proyectos con sus funciones:",
+    "pares": [
+      {
+        "izquierda": "Iniciación",
+        "derecha": "Establece los objetivos y define el alcance del proyecto."
+      },
+      {
+        "izquierda": "Planificación",
+        "derecha": "Desarrolla el plan que guiará la ejecución del proyecto."
+      },
+      {
+        "izquierda": "Ejecución",
+        "derecha": "Implementa las actividades definidas en el plan del proyecto."
+      },
+      {
+        "izquierda": "Cierre",
+        "derecha": "Formaliza la finalización y entrega del proyecto."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada grupo de procesos tiene una función específica en el ciclo de vida del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Un proyecto requiere una inversión de $50,000 y genera un flujo de efectivo neto de $10,000 por año. ¿Cuál es el PRI o período de recuperación de la inversión?",
+    "opciones": [
+      "PRI = 5 años",
+      "PRI = 10 años",
+      "PRI = 3 años",
+      "PRI = 7 años"
+    ],
+    "respuesta": 0,
+    "explicacion": "El período de recuperación se calcula dividiendo la inversión inicial entre el flujo anual: $50,000 / $10,000 = 5 años."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Qué rol se espera que cumpla un gerente de proyecto según la guía PMBOK?",
+    "opciones": [
+      "Guiar al equipo para cumplir los objetivos del proyecto aplicando conocimientos, herramientas y liderazgo.",
+      "Aprobar cambios en la política organizacional.",
+      "Evaluar el desempeño financiero anual de la organización.",
+      "Decidir sobre la contratación del personal de toda la empresa."
+    ],
+    "respuesta": 0,
+    "explicacion": "El gerente de proyecto debe guiar al equipo aplicando conocimientos, herramientas y liderazgo para cumplir los objetivos."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Qué elemento NO debe faltar en un acta de constitución del proyecto?",
+    "opciones": [
+      "Resumen del currículo de cada miembro del equipo.",
+      "Plan de marketing del producto generado.",
+      "Identificación de los objetivos del negocio.",
+      "Horario detallado de todas las reuniones técnicas."
+    ],
+    "respuesta": 2,
+    "explicacion": "El acta de constitución debe incluir la identificación de los objetivos del negocio que el proyecto busca alcanzar."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es una característica distintiva del ciclo de vida adaptativo en proyectos de TI?",
+    "opciones": [
+      "Se prohíbe cualquier cambio posterior a la planificación.",
+      "El producto final se entrega en una única fase.",
+      "No se requiere validación del cliente en cada etapa.",
+      "El alcance detallado se define en cada iteración."
+    ],
+    "respuesta": 3,
+    "explicacion": "En el ciclo de vida adaptativo, el alcance detallado se define progresivamente en cada iteración."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es una dificultad clave que enfrentan las estructuras organizacionales mixtas en proyectos?",
+    "opciones": [
+      "Falta de herramientas informáticas disponibles.",
+      "Doble reporte jerárquico que genera conflictos de autoridad.",
+      "Ausencia de gerentes de proyecto.",
+      "Exceso de control del gerente funcional sobre presupuesto."
+    ],
+    "respuesta": 1,
+    "explicacion": "Las estructuras mixtas o matriciales presentan doble reporte jerárquico, lo que puede generar conflictos de autoridad."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es el principal objetivo de la gestión de las comunicaciones en un proyecto según PMBOK?",
+    "opciones": [
+      "Garantizar que la información fluya correctamente entre los interesados.",
+      "Planificar el alcance del proyecto.",
+      "Monitorear los costos.",
+      "Desarrollar el equipo del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "La gestión de comunicaciones busca garantizar que la información fluya correctamente entre todos los interesados."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es la diferencia esencial entre gestión de programas y gestión de proyectos?",
+    "opciones": [
+      "Los programas no tienen entregables.",
+      "La gestión de programas tiene menor presupuesto que los proyectos.",
+      "Un programa solo puede contener proyectos idénticos.",
+      "La gestión de programas coordina múltiples proyectos relacionados para obtener beneficios estratégicos."
+    ],
+    "respuesta": 3,
+    "explicacion": "La gestión de programas coordina múltiples proyectos relacionados para obtener beneficios estratégicos conjuntos."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles de los siguientes son beneficios del proyecto que deben incluirse en el Project Charter?",
+    "opciones": [
+      "Mejora de la eficiencia operativa.",
+      "Aumento en la satisfacción del cliente.",
+      "Detalles técnicos del producto.",
+      "Listado de actividades operativas."
+    ],
+    "respuestas_correctas": [0, 1],
+    "explicacion": "Los beneficios como mejora de eficiencia y aumento de satisfacción del cliente deben incluirse en el Project Charter."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál de los siguientes es un método utilizado para distribuir información en proyectos informáticos?",
+    "opciones": [
+      "Reuniones del proyecto.",
+      "Análisis de riesgos.",
+      "Diagrama de Gantt.",
+      "Control de calidad."
+    ],
+    "respuesta": 0,
+    "explicacion": "Las reuniones del proyecto son un método efectivo para distribuir información entre los interesados."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles son las mejores prácticas para asegurar una comunicación efectiva durante la ejecución de un proyecto?",
+    "opciones": [
+      "Realizar reuniones periódicas de equipo",
+      "Asignar los entregables",
+      "Establecer canales de comunicación claros",
+      "Definir el plan de comunicación"
+    ],
+    "respuestas_correctas": [0, 2],
+    "explicacion": "Realizar reuniones periódicas y establecer canales claros son prácticas clave para la comunicación efectiva."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Qué factor puede afectar la adquisición del equipo de trabajo en un proyecto?",
+    "opciones": [
+      "Planificación del alcance.",
+      "Disponibilidad de los recursos humanos.",
+      "Costos de adquisición.",
+      "Evaluación de riesgos."
+    ],
+    "respuesta": 1,
+    "explicacion": "La disponibilidad de recursos humanos es un factor clave que afecta la adquisición del equipo de trabajo."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál de las siguientes razones corresponden a proyectos terminados normalmente?",
+    "opciones": [
+      "Verse obligado a completar un proyecto antes de tiempo.",
+      "Cumplen dentro de los objetivos, costo, calidad y cronograma.",
+      "Cambio en las prioridades.",
+      "Varios aspectos: atención a las personas, procesos o tecnologías.",
+      "Proyectos que no tiene éxito esperado.",
+      "Proyectos nunca pareces terminar.",
+      "Proyecto completa sus resultados según lo planificado."
+    ],
+    "respuestas_correctas": [1, 6],
+    "explicacion": "Los proyectos terminados normalmente cumplen con los objetivos establecidos y completan sus resultados según lo planificado."
+  },
+  {
+    "tipo": "ordenamiento",
+    "pregunta": "A partir del siguiente listado, ordenen los pasos del proceso para el control integrado de cambio de un proyecto:",
+    "opciones": [
+      "Búsqueda de alternativas",
+      "Ajuste del plan de dirección y de líneas base",
+      "Aprobación por parte del CCB",
+      "Gestionar el proyecto de acuerdo al nuevo plan",
+      "Evaluación del impacto",
+      "Notificación a los interesados del cambio e impacto"
+    ],
+    "orden_correcto": [4, 0, 2, 1, 5, 3],
+    "explicacion": "El orden correcto es: Evaluación del impacto, Búsqueda de alternativas, Aprobación por CCB, Ajuste del plan, Notificación a interesados, y Gestionar según nuevo plan."
+  }
+]
