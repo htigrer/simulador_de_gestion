@@ -1,0 +1,1476 @@
+[
+  {
+    "tipo": "multiple",
+    "pregunta": "En la gestión de proyectos, ¿podemos decir que los procesos son parte de una cadena de calidad cuándo?",
+    "opciones": [
+      "Los procesos comparten los mismos parámetros de entrada y salida.",
+      "Los resultados de un proceso sirven como entradas para otros procesos.",
+      "Los costos de un proceso son iguales al resto de procesos.",
+      "Los insumos son diferentes para cada proceso."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los procesos forman una cadena de calidad cuando los resultados de un proceso sirven como entradas para otros procesos, creando un flujo continuo de trabajo."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál de los siguientes serían ejemplos que corresponden a métricas de calidad relacionados al proyecto?",
+    "opciones": [
+      "Defectos por fase: Número de defectos encontrados durante cada fase del proyecto.",
+      "Corregir el tiempo de respuesta: Tiempo promedio que toma arreglar un defecto.",
+      "Solicitudes de cambio: Número de cambios de alcance solicitados por el cliente o patrocinador.",
+      "Recursos sobreasignados: Número de recursos sobreasignados a más de una tarea.",
+      "Tareas sobrepuestas: Número de tareas (y el monto en dólares de las tareas) cuya finalización ha costado más de lo esperado."
+    ],
+    "respuestas_correctas": [0, 1],
+    "explicacion": "Las métricas de calidad incluyen defectos por fase y tiempo de corrección, que miden directamente la calidad del trabajo realizado."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "A qué tipo de técnica general para resolver conflicto, corresponde el siguiente enunciado: busca soluciones que traigan cierto grado de satisfacción a todas las partes para resolver temporal o parcialmente el conflicto.",
+    "opciones": [
+      "Retirar/evitar.",
+      "Suavizar/acomodar.",
+      "Compromiso/reconciliación.",
+      "Fuerza/Directo.",
+      "Colaborar/resolver problemas."
+    ],
+    "respuesta": 2,
+    "explicacion": "El compromiso/reconciliación busca soluciones que traigan cierto grado de satisfacción a todas las partes involucradas en el conflicto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: Un proceso es un conjunto de _________________, ________________, _________________ utilizados para producir un ____________ o ___________.",
+    "opciones": [
+      "servicios; productos; materiales; métodos; actividades.",
+      "actividades; métodos; materiales; producto; servicio.",
+      "actividades; métodos; producto; servicio; materiales;",
+      "servicios; actividades; producto; materiales; métodos."
+    ],
+    "respuesta": 1,
+    "explicacion": "Un proceso es un conjunto de actividades, métodos y materiales utilizados para producir un producto o servicio."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles son las herramientas sugeridas para la planificación de la gestión de la calidad?",
+    "opciones": [
+      "Diagrama de control",
+      "Diagrama de dispersión",
+      "Diagramas de Árbol",
+      "Diagramas de flujo",
+      "Histogramas",
+      "Diagrama causa efecto",
+      "Hoja de verificación",
+      "Dígrafos de Interrelaciones",
+      "Gráficas de programación de decisiones",
+      "Diagramas Matriciales",
+      "Diagrama de Pareto"
+    ],
+    "respuestas_correctas": [2, 3, 7, 8, 9],
+    "explicacion": "Para la planificación de calidad se utilizan: Diagramas de Árbol, Diagramas de flujo, Dígrafos de Interrelaciones, Gráficas de programación de decisiones y Diagramas Matriciales."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Completar: ___________________________ es un acuerdo legal y vinculante que obliga a proporcionar productos, servicios o resultado por una compensación monetaria.",
+    "opciones": [
+      "Remuneración o sueldo.",
+      "Venta",
+      "Compra",
+      "Contrato"
+    ],
+    "respuesta": 3,
+    "explicacion": "Un contrato es un acuerdo legal y vinculante que obliga a las partes a proporcionar productos, servicios o resultados a cambio de una compensación monetaria."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "Identifique cuál es considerada una habilidad genérica de comunicación que debe poseer todo director general de una organización o director de algún proyecto en TI",
+    "opciones": [
+      "Escuchar de manera activa y eficaz.",
+      "Orientar al equipo para optimizar su desempeño.",
+      "Organiza las actividades del proyecto.",
+      "Mitigar conflictos.",
+      "Negociar con las partes interesadas.",
+      "Persuadir instigando a los miembros del equipo.",
+      "Limita la formación para incrementar conocimiento.",
+      "Planifica las actividades del proyecto.",
+      "Incentiva las confrontaciones entre equipos."
+    ],
+    "respuestas_correctas": [0, 3, 4],
+    "explicacion": "Las habilidades genéricas de comunicación incluyen: escuchar activamente, mitigar conflictos y negociar con las partes interesadas."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: _______________________________ significa que no existen los recursos suficientes y disponibles para realizar el trabajo asignado durante un periodo de tiempo determinado.",
+    "opciones": [
+      "Sobreasignación de recursos",
+      "Subasignación de recursos",
+      "Redistribución de recursos",
+      "Reprogramación de recursos",
+      "Sobredimensión de recursos."
+    ],
+    "respuesta": 0,
+    "explicacion": "La sobreasignación de recursos ocurre cuando no hay recursos suficientes disponibles para realizar el trabajo asignado en el tiempo determinado."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "A partir de los siguiente, identifique cuál corresponde a los costos de falla o mala calidad externos.",
+    "opciones": [
+      "Costos por pérdidas de clientes.",
+      "Costos por retrabajo",
+      "Costos por desperdicio o chatarra.",
+      "Costos por responsabilidades.",
+      "Quejas de clientes",
+      "Costos por garantías"
+    ],
+    "respuestas_correctas": [0, 3, 4, 5],
+    "explicacion": "Los costos de falla externos incluyen: pérdidas de clientes, responsabilidades, quejas de clientes y costos por garantías."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál(es) de los siguientes son considerados métodos de la comunicación?",
+    "opciones": [
+      "Método Pull",
+      "Asincrónico",
+      "Método interactivo",
+      "Sincrónico",
+      "Método Push"
+    ],
+    "respuestas_correctas": [0, 2, 4],
+    "explicacion": "Los métodos de comunicación son: Método Pull, Método interactivo y Método Push."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "En el contexto de la reunión final y presentación de un proyecto. Identifique y relacione sus beneficios.",
+    "pares": [
+      {
+        "izquierda": "Comunicar",
+        "derecha": "Conclusión del proyecto."
+      },
+      {
+        "izquierda": "Transferir",
+        "derecha": "Producto, servicio o resultado a la organización."
+      },
+      {
+        "izquierda": "Reconocer",
+        "derecha": "Contribuciones del equipo del Proyecto y otros interesados."
+      },
+      {
+        "izquierda": "Obtener",
+        "derecha": "Aprobación formal del proyecto."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "En la reunión final: se comunica la conclusión, se transfiere el producto a la organización, se reconocen las contribuciones y se obtiene la aprobación formal."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Dentro de los grupos de procesos de gestión de proyectos, ¿a qué grupo corresponden los siguientes productos y/o entregables? Archivar documentos del proyecto, Aceptación formal de resultados del proyecto o fase, Cerrar contratos, lecciones aprendidas, Acta entrega-recepción formal.",
+    "opciones": [
+      "Proceso de seguimiento y control",
+      "Proceso de Cierre",
+      "Proceso de ejecución",
+      "Proceso de planificación"
+    ],
+    "respuesta": 1,
+    "explicacion": "Estas actividades y entregables corresponden al proceso de Cierre del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: ___________________________ tiende a ver el proyecto como una relación comprador-vendedor a corto plazo, donde sacar el máximo provecho de su dinero es el criterio más importante para aceptar el proyecto. ¿Qué tipo de patrocinador es?",
+    "opciones": [
+      "Patrocinador informado",
+      "Patrocinador negociador.",
+      "Patrocinador miope",
+      "Patrocinador objetivo"
+    ],
+    "respuesta": 1,
+    "explicacion": "El patrocinador negociador ve el proyecto como una relación comprador-vendedor donde lo más importante es sacar el máximo provecho económico."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "Son actividades de gestión de cambio:",
+    "opciones": [
+      "Informar a los grupos de interés afectados del cambio en el proyecto.",
+      "Verificar y comunicar el progreso del desempeño.",
+      "Mantener la integridad de las líneas base.",
+      "Supervisar la ejecución del proyecto.",
+      "Controlar que los hitos se cumplan respecto a lo previsto en la planificación.",
+      "Gestionar solo los cambios aprobados.",
+      "Evaluar, aprobar y/o rechazar acciones preventivas y correctivas propuestas.",
+      "Llevar a buen puerto el proyecto y alcanzar los objetivos trazados."
+    ],
+    "respuestas_correctas": [0, 2, 5, 6],
+    "explicacion": "Las actividades de gestión de cambio incluyen: informar a grupos de interés, mantener integridad de líneas base, gestionar solo cambios aprobados y evaluar/aprobar acciones correctivas."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Dentro del contenido de informe de entrega de resultados de un proyecto, los siguientes documentos corresponden a que sección del informe: Documentación de sistemas, Manual de usuario, Materiales de formación, Documentación de mantenimiento.",
+    "opciones": [
+      "Cuestiones pendientes.",
+      "Comparación de lo planificado con lo real.",
+      "Lista de documentos del proyecto.",
+      "Resumen del proyecto."
+    ],
+    "respuesta": 2,
+    "explicacion": "Estos documentos corresponden a la sección 'Lista de documentos del proyecto' en el informe de entrega."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál(es) de los siguientes son errores de forma que pueden ser subsanados y que no afectan a la planificación o alcance del proyecto?",
+    "opciones": [
+      "Error en la transcripción de un dato",
+      "Error en las estimaciones de tiempo del proyecto.",
+      "Omisión de información en documento.",
+      "Error en cálculos de costos del proyecto.",
+      "Errores en el formato del documento"
+    ],
+    "respuestas_correctas": [0, 2, 4],
+    "explicacion": "Los errores de forma que no afectan planificación o alcance son: errores de transcripción, omisiones de información y errores de formato."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál(es) de las siguientes son herramientas y técnicas aplicadas al control integrado de cambios?",
+    "opciones": [
+      "Sistemas de información de gestión de proyectos.",
+      "Reuniones de control de cambios.",
+      "Técnicas analíticas",
+      "Juicio de expertos"
+    ],
+    "respuestas_correctas": [0, 1, 2, 3],
+    "explicacion": "Todas las opciones son herramientas y técnicas aplicadas al control integrado de cambios."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Identifique y relacione los procesos del ciclo de vida de un proyecto con los hitos y/o entregables que corresponda.",
+    "pares": [
+      {
+        "izquierda": "Inicio",
+        "derecha": "Proyecto alineado a la estrategia corporativa"
+      },
+      {
+        "izquierda": "Monitoreo y control",
+        "derecha": "Estado de rendimiento"
+      },
+      {
+        "izquierda": "Planeación",
+        "derecha": "Plan de gestión del proyecto autorizado"
+      },
+      {
+        "izquierda": "Ejecución",
+        "derecha": "Elaborar los objetivos del proyecto"
+      },
+      {
+        "izquierda": "Cierre",
+        "derecha": "Acta entrega-recepción"
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada fase del ciclo de vida tiene hitos específicos: Inicio-alineación estratégica, Monitoreo-estado de rendimiento, Planeación-plan autorizado, Ejecución-objetivos elaborados, Cierre-acta de entrega."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál(es) de los siguientes son herramientas y técnicas para monitorear y controlar proyectos?",
+    "opciones": [
+      "Gestión del valor ganado",
+      "Previsiones de costes",
+      "Analítica de regresión",
+      "Pronósticos del cronograma",
+      "Sistema de información de gestión de proyectos.",
+      "Juicio de expertos"
+    ],
+    "respuestas_correctas": [0, 1, 3, 4, 5],
+    "explicacion": "Las herramientas para monitorear y controlar incluyen: valor ganado, previsiones de costes, pronósticos del cronograma, sistemas de información y juicio de expertos."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál(es) tipos de cambios que pueden afectar a la planificación o al alcance de gestión del proyecto o sus planes subyacentes?",
+    "opciones": [
+      "Metodología de desarrollo del proveedor.",
+      "Estructura interna organizacional de la empresa.",
+      "Presupuesto del proyecto.",
+      "Nuevos competidores.",
+      "Cronograma o actividades del proyecto.",
+      "Descripción del alcance del proyecto.",
+      "Personal del equipo del proyecto"
+    ],
+    "respuestas_correctas": [2, 4, 5, 6],
+    "explicacion": "Los cambios que afectan la planificación/alcance son: presupuesto, cronograma, descripción del alcance y personal del equipo."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál(es) de las siguientes es(son) responsabilidad(es) del director del proyecto cuando se producen cambios respecto al plan del proyecto autorizado?",
+    "opciones": [
+      "Supervisar la línea base y rendimiento esperado.",
+      "Proponer acciones correctivas ante posibles problemas.",
+      "Garantizar solo implementar cambios aprobados.",
+      "Controlar los cambios",
+      "Proponer acciones preventivas ante posibles problemas."
+    ],
+    "respuestas_correctas": [0, 1, 2, 3, 4],
+    "explicacion": "Todas las opciones son responsabilidades del director cuando ocurren cambios: supervisar línea base, proponer acciones correctivas y preventivas, garantizar solo cambios aprobados y controlar los cambios."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Los siguientes son beneficios claves de que tipo de control nos referimos? 1. Identificar las causas de errores del proceso y/o producto, y recomendar medidas de acción para eliminarlas. 2. Validar los entregables con la finalidad de cumplir con los requisitos especificados por las partes interesadas según el plan.",
+    "opciones": [
+      "Control de calidad",
+      "Control de alcance",
+      "Control de riesgos",
+      "Control integrado de cambios"
+    ],
+    "respuesta": 0,
+    "explicacion": "Estos beneficios corresponden al control de calidad, que identifica causas de errores y valida entregables según requisitos."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "Como refiere J. Davidson Frame (1998), el director y el equipo del proyecto deben estar preparados para hacer frente a las siguientes realidades:",
+    "opciones": [
+      "Los recursos se están agotando.",
+      "Aún existen errores derivados del proyecto.",
+      "La documentación adquiere una importancia primordial.",
+      "Miembros del equipo están preocupados por futuros trabajos."
+    ],
+    "respuestas_correctas": [0, 1, 2, 3],
+    "explicacion": "Todas las opciones son realidades que el director y equipo deben enfrentar según Frame (1998)."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "En el contexto de aceptación de entregables. Si el patrocinador sea del estilo miope o informado, el director o gerente del proyecto y su equipo pueden mejorar la probabilidad de que el proyecto sea aceptado si:",
+    "opciones": [
+      "Cierra la contabilidad del proyecto incluyendo contrataciones y liquidaciones",
+      "Desarrollar una revisión final del proyecto.",
+      "Documentar la finalización de todos los entregables e hitos del proyecto",
+      "Definen claramente los criterios de aceptación en las primeras etapas del proyecto.",
+      "Cuenta con procedimientos de cambios de alcance"
+    ],
+    "respuestas_correctas": [1, 2, 3],
+    "explicacion": "Para mejorar la aceptación se debe: desarrollar revisión final, documentar finalización de entregables/hitos y definir criterios de aceptación tempranamente."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "En paralelo, algunas actividades adicionales necesitan ser llevadas a cabo en la etapa de cierre. Un conjunto completo de registros derivados del proyecto debe ser preparado para el archivo, incluyendo:",
+    "opciones": [
+      "Supervisar la implementación de cambios aprobados.",
+      "Analizar riesgos existentes e identificar nuevos riesgos para el proyecto.",
+      "Documentar el impacto total de las solicitudes de cambio.",
+      "Liberar los recursos del proyecto",
+      "Elaborar un informe final del proyecto",
+      "Revisar, analizar y aprobar todas las solicitudes de cambio.",
+      "Reunión con los clientes para lograr aprobación final de los entregables",
+      "Cerrar la contabilidad del proyecto incluyendo contrataciones y liquidaciones"
+    ],
+    "respuestas_correctas": [4, 7],
+    "explicacion": "En el cierre se debe: elaborar informe final y cerrar la contabilidad del proyecto incluyendo contrataciones y liquidaciones."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: ______________________es la instancia responsable de aprobar o rechazar las solicitudes de cambio en un proyecto.",
+    "opciones": [
+      "Comité de evaluación del proyecto.",
+      "Director del proyecto",
+      "Comité de control de cambios.",
+      "Directores de área de la organización ejecutante.",
+      "Junta directiva de la organización ejecutante."
+    ],
+    "respuesta": 2,
+    "explicacion": "El Comité de control de cambios (CCB) es la instancia responsable de aprobar o rechazar solicitudes de cambio."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles de las siguientes son razones para terminar un proyecto?",
+    "opciones": [
+      "Prioridades normales",
+      "Cambio de política o leyes gubernamentales.",
+      "Prematuro",
+      "Perpetuo",
+      "Fallido",
+      "Nuevo producto o tecnología de la competencia",
+      "Prioridades cambiadas"
+    ],
+    "respuestas_correctas": [0, 1, 2, 3, 4, 5, 6],
+    "explicacion": "Todas las opciones son razones válidas para terminar un proyecto: normal, prematuro, perpetuo, fallido, cambios externos o de prioridades."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Qué indica el análisis de sensibilidad cuando la TIR de un proyecto es sensible a pequeñas variaciones en los flujos de efectivo?",
+    "opciones": [
+      "El proyecto tiene un alto riesgo ya que sus resultados dependen de pequeñas variaciones.",
+      "El proyecto es estable y no presenta riesgos.",
+      "El proyecto no genera valor significativo.",
+      "El proyecto debe ser aceptado sin ajustes."
+    ],
+    "respuesta": 0,
+    "explicacion": "Si la TIR es sensible a pequeñas variaciones, indica alto riesgo porque pequeños cambios pueden afectar significativamente los resultados."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Qué tipo de información debe estar incluida en el Project Charter?",
+    "opciones": [
+      "Lista de los principales interesados.",
+      "Nombre y descripción del proyecto.",
+      "Plan de gestión de riesgos.",
+      "Cronograma detallado del proyecto."
+    ],
+    "respuestas_correctas": [0, 1],
+    "explicacion": "El Project Charter debe incluir la lista de principales interesados y el nombre y descripción del proyecto."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Empareja los criterios de aceptación del VAN con sus características:",
+    "pares": [
+      {
+        "izquierda": "VAN igual a cero",
+        "derecha": "El proyecto no genera ni ganancias ni pérdidas."
+      },
+      {
+        "izquierda": "VAN negativo",
+        "derecha": "El proyecto debería ser rechazado."
+      },
+      {
+        "izquierda": "VAN mayor que cero",
+        "derecha": "Incrementa la riqueza de los accionistas."
+      },
+      {
+        "izquierda": "VAN positivo",
+        "derecha": "El proyecto debería ser aceptado."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "VAN=0: no hay ganancias ni pérdidas; VAN negativo: rechazar; VAN>0: incrementa riqueza; VAN positivo: aceptar."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál es una de las principales razones para realizar reuniones en los proyectos?",
+    "opciones": [
+      "Controlar el presupuesto del proyecto.",
+      "Crear y potenciar la identidad del equipo de trabajo.",
+      "Realizar el análisis de riesgos.",
+      "Definir el alcance del proyecto."
+    ],
+    "respuesta": 1,
+    "explicacion": "Una razón principal para realizar reuniones es crear y potenciar la identidad del equipo de trabajo, fortaleciendo la cohesión del grupo."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Empareja las fuentes de financiamiento externo con sus características:",
+    "pares": [
+      {
+        "izquierda": "Préstamos bancarios",
+        "derecha": "Fondos otorgados por instituciones financieras con pago de intereses."
+      },
+      {
+        "izquierda": "Bonos",
+        "derecha": "Títulos de deuda emitidos por empresas o gobiernos para recaudar fondos."
+      },
+      {
+        "izquierda": "Crowdfunding",
+        "derecha": "Financiamiento obtenido a través de contribuciones de múltiples personas."
+      },
+      {
+        "izquierda": "Venture capital",
+        "derecha": "Financiamiento provisto por inversores a startups con potencial de crecimiento."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada fuente de financiamiento tiene características específicas: préstamos con intereses, bonos de deuda, crowdfunding colaborativo y venture capital para startups."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Qué herramientas son útiles para el control de un proyecto?",
+    "opciones": [
+      "Establecimiento del alcance",
+      "Gestión del valor ganado",
+      "Planificación de recursos",
+      "Análisis de tendencia"
+    ],
+    "respuestas_correctas": [1, 3],
+    "explicacion": "Para el control del proyecto son útiles la gestión del valor ganado y el análisis de tendencia."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Empareja las modalidades de financiamiento con sus características:",
+    "pares": [
+      {
+        "izquierda": "Préstamo a corto plazo",
+        "derecha": "Se paga en un periodo de tiempo breve, generalmente menos de un año."
+      },
+      {
+        "izquierda": "Préstamo a largo plazo",
+        "derecha": "Se paga a lo largo de varios años, con intereses acumulados."
+      },
+      {
+        "izquierda": "Leasing",
+        "derecha": "Alquila bienes para su uso temporal."
+      },
+      {
+        "izquierda": "Factoring",
+        "derecha": "Venta de cuentas por cobrar a un tercero."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada modalidad tiene características específicas: préstamos corto/largo plazo por duración, leasing por alquiler y factoring por venta de cuentas por cobrar."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles son pasos clave en el control del presupuesto de un proyecto?",
+    "opciones": [
+      "Hacer ajustes en los pronósticos de costos según el progreso",
+      "Revisar el presupuesto real frente al presupuesto planificado",
+      "Asignar recursos adicionales",
+      "Definir el presupuesto del proyecto"
+    ],
+    "respuestas_correctas": [0, 1],
+    "explicacion": "Los pasos clave para controlar el presupuesto son: hacer ajustes en pronósticos según progreso y revisar presupuesto real vs planificado."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Empareja las funciones del gerente de proyecto con sus descripciones correspondientes:",
+    "pares": [
+      {
+        "izquierda": "Planificación",
+        "derecha": "Asignar recursos y tiempos para cada tarea."
+      },
+      {
+        "izquierda": "Control",
+        "derecha": "Supervisar el progreso y hacer ajustes."
+      },
+      {
+        "izquierda": "Ejecución",
+        "derecha": "Llevar a cabo las actividades planificadas."
+      },
+      {
+        "izquierda": "Cierre",
+        "derecha": "Completar formalmente el proyecto y entregarlo."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada función del gerente tiene un propósito: planificación-asignación, control-supervisión, ejecución-llevar a cabo, cierre-completar."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: ______________________es el proceso de definir la disponibilidad del personal (equipo del proyecto) y obtener el personal necesario para completar las actividades planificadas del proyecto.",
+    "opciones": [
+      "Desarrollar el equipo del proyecto.",
+      "Planificar la gestión de recursos humanos.",
+      "Adquirir el equipo del proyecto.",
+      "Gestionar el equipo del proyecto."
+    ],
+    "respuesta": 2,
+    "explicacion": "Adquirir el equipo del proyecto es el proceso de definir disponibilidad y obtener el personal necesario para las actividades planificadas."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles de los siguientes son herramientas y técnicas utilizadas para gestionar el equipo del proyecto?",
+    "opciones": [
+      "Asignación previa.",
+      "Gestión de conflictos.",
+      "Habilidades interpersonales.",
+      "Evaluación del desempeño.",
+      "Adquisición.",
+      "Observación y conversación.",
+      "Negociación."
+    ],
+    "respuestas_correctas": [1, 2, 3, 5],
+    "explicacion": "Para gestionar el equipo se utilizan: gestión de conflictos, habilidades interpersonales, evaluación del desempeño y observación/conversación."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Dado el análisis de requisitos de comunicación, un director o gerente debe considerar la cantidad de posibles canales de comunicación como un indicador de la complejidad. Aplicando la fórmula para obtener el número de canales de comunicación. ¿Cuántos canales de comunicación obtendría para un proyecto con: Jefe de desarrolladores: 2 integrantes, Desarrolladores del módulo de RRHH: 4 integrantes, Usuarios clave del área de RRHH: 2 integrantes?",
+    "opciones": [
+      "16 canales de comunicación potenciales.",
+      "24 canales de comunicación potenciales.",
+      "28 canales de comunicación potenciales.",
+      "12 canales de comunicación potenciales."
+    ],
+    "respuesta": 2,
+    "explicacion": "Total de personas: 2+4+2=8. Fórmula: n(n-1)/2 = 8(7)/2 = 28 canales de comunicación potenciales."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: __________________________significa que la información sea proporcionada en el formato adecuado, en el momento adecuado y con el impacto adecuado.",
+    "opciones": [
+      "Comunicación afectiva.",
+      "Comunicación efectiva.",
+      "Comunicación objetiva.",
+      "Comunicación asertiva."
+    ],
+    "respuesta": 1,
+    "explicacion": "Comunicación efectiva significa proporcionar información en el formato, momento e impacto adecuados."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "En un proyecto de desarrollo de software, el sistema en sí, es el producto más importante del proyecto; el cuál debe ser apto para el uso y conforme a los requisitos especificados, por ende estos insumos deben estar descritos en qué documentos?",
+    "opciones": [
+      "Requisitos funcionales.",
+      "Alcance del proyecto.",
+      "Cronograma del proyecto.",
+      "Presupuesto.",
+      "Manuales técnicos de usuario y desarrollo."
+    ],
+    "respuestas_correctas": [0, 1, 4],
+    "explicacion": "Los requisitos y especificaciones deben estar en: requisitos funcionales, alcance del proyecto y manuales técnicos."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál de los siguientes son factores que pueden afectar la elección de la tecnología empleada para la gestión de las comunicaciones?",
+    "opciones": [
+      "Disponibilidad de la tecnología.",
+      "Facilidad de uso",
+      "Confidencialidad de la información",
+      "Urgencia de la necesidad de la información.",
+      "Disponibilidad de la información"
+    ],
+    "respuestas_correctas": [0, 1, 2, 3],
+    "explicacion": "Los factores que afectan la elección de tecnología son: disponibilidad, facilidad de uso, confidencialidad y urgencia de la información."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: ____________________es el proceso que permite crear, recopilar, distribuir, almacenar, recuperar y disponer de la información final del proyecto.",
+    "opciones": [
+      "Administrar las comunicaciones",
+      "Controlar las comunicaciones",
+      "Organizar las comunicaciones",
+      "Planificar la gestión de las comunicaciones"
+    ],
+    "respuesta": 1,
+    "explicacion": "Controlar las comunicaciones es el proceso de crear, recopilar, distribuir, almacenar, recuperar y disponer de la información final."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "La planificación de las comunicaciones se las realiza durante:",
+    "opciones": [
+      "Ejecución del plan de proyecto.",
+      "Análisis de necesidades y requerimientos.",
+      "Diseño del plan de la gestión del proyecto.",
+      "Desarrollo del plan del proyecto."
+    ],
+    "respuesta": 2,
+    "explicacion": "La planificación de las comunicaciones se realiza durante el diseño del plan de la gestión del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: _______________________________ es una técnica de proceso formal de revisión o evaluación de los oferentes, de acuerdo con las políticas de adquisición del comprador.",
+    "opciones": [
+      "Evaluación de Propuestas",
+      "Estimaciones Independientes",
+      "Conferencias de oferentes.",
+      "Negociación de Adquisiciones"
+    ],
+    "respuesta": 0,
+    "explicacion": "La Evaluación de Propuestas es el proceso formal de revisión de oferentes según políticas de adquisición."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles son las herramientas sugeridas para la realización del aseguramiento de la calidad?",
+    "opciones": [
+      "Diagrama de Pareto",
+      "Histogramas",
+      "Diagramas de flujo",
+      "Diagrama de Red de la Actividad",
+      "Dígrafos de Interrelaciones",
+      "Gráficas de programación de decisiones",
+      "Matrices de Priorización",
+      "Diagrama causa efecto",
+      "Diagramas de Árbol",
+      "Diagramas Matriciales",
+      "Hoja de verificación"
+    ],
+    "respuestas_correctas": [2, 4, 5, 6, 8, 9],
+    "explicacion": "Para aseguramiento de calidad se usan: diagramas de flujo, dígrafos de interrelaciones, gráficas de programación, matrices de priorización, diagramas de árbol y diagramas matriciales."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Empareja los documentos de un proyecto con su propósito principal:",
+    "pares": [
+      {
+        "izquierda": "Acta de Constitución",
+        "derecha": "Describe los entregables y objetivos del proyecto."
+      },
+      {
+        "izquierda": "Plan de Gestión",
+        "derecha": "Asegura la correcta asignación de recursos y tiempos."
+      },
+      {
+        "izquierda": "Registro de Riesgos",
+        "derecha": "Registra los posibles eventos que podrían afectar el proyecto."
+      },
+      {
+        "izquierda": "Informe de Progreso",
+        "derecha": "Proporciona actualizaciones sobre el estado actual del proyecto."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada documento tiene un propósito: Acta-objetivos, Plan-recursos/tiempos, Registro-riesgos, Informe-estado actual."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Qué debe priorizar un gerente de proyecto cuando el presupuesto y tiempo son fijos pero surge una nueva necesidad?",
+    "opciones": [
+      "Asignar más recursos sin aprobación.",
+      "Reevaluar el alcance y negociar con el patrocinador.",
+      "Eliminar la necesidad sin documentarla.",
+      "Suspender el proyecto hasta obtener más fondos."
+    ],
+    "respuesta": 1,
+    "explicacion": "Con presupuesto y tiempo fijos, se debe reevaluar el alcance y negociar con el patrocinador para gestionar la nueva necesidad."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Qué actividades administrativas integran el proceso de cierre de un proyecto?",
+    "opciones": [
+      "Archivar documentos de proyecto.",
+      "Documentar lecciones aprendidas.",
+      "Definición y autorización de un proyecto o fase.",
+      "Diseñar y mantener un plan de trabajo.",
+      "Coordinar las personas y recursos",
+      "Recibir aceptación formal del trabajo entregado.",
+      "Cerrar contratos"
+    ],
+    "respuestas_correctas": [0, 1, 5, 6],
+    "explicacion": "El cierre incluye: archivar documentos, documentar lecciones aprendidas, recibir aceptación formal y cerrar contratos."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "El beneficio clave del seguimiento y control del trabajo del proyecto es que permite a las partes interesadas comprender:",
+    "opciones": [
+      "El pronósticos del alcance.",
+      "El cronograma actual del proyecto.",
+      "Presupuesto actual del proyecto.",
+      "Estado actual del proyecto.",
+      "El plan de la gestión del proyecto.",
+      "La lista de interesados del proyecto."
+    ],
+    "respuestas_correctas": [3],
+    "explicacion": "El beneficio clave del seguimiento y control es comprender el estado actual del proyecto."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "A partir del siguiente enunciado, identifique cuál o cuáles limita la gestión del control integrado de cambios? Realizar el control integrado de cambios es el proceso de revisar todas las solicitudes de cambio, aprobadas o no; gestionando los cambios en:",
+    "opciones": [
+      "Plan de gestión",
+      "Comunicar del cambio a todo el equipo.",
+      "Entregables",
+      "Actualización de documentos",
+      "Línea base"
+    ],
+    "respuestas_correctas": [0, 2, 4],
+    "explicacion": "El control integrado de cambios gestiona cambios en: plan de gestión, entregables y línea base."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la alternativa correcta: En el caso de cierre de un proyecto de desarrollo de software, se considera aceptado el producto final ¿Cuándo?",
+    "opciones": [
+      "Entregas parciales o preliminares por cada fase, actividad, tarea mediante reuniones informales.",
+      "Con entregas parciales o finales que involucre entregables.",
+      "Con entregas parciales o finales que involucre entregables, verificados, validados y certificados formalmente por el cliente.",
+      "Con la entrega, instalación e implementación del software."
+    ],
+    "respuesta": 2,
+    "explicacion": "El producto se acepta cuando los entregables están verificados, validados y certificados formalmente por el cliente."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál de los siguientes son características del control integrado de cambios?",
+    "opciones": [
+      "Evaluar el desempeño para resolver si aplicar alguna medida preventiva o correctiva.",
+      "Mantener actualizados los planes adyacentes al proyecto.",
+      "Responder a eventos o incidencias.",
+      "Cualquier interesado puede proponer cambios o ajustes.",
+      "Mantener una base de información actualizada sobre los productos del proyecto.",
+      "Contrastar el desempeño real del proyecto en el plan original."
+    ],
+    "respuestas_correctas": [0, 1, 3, 4],
+    "explicacion": "Las características del control integrado incluyen: evaluar desempeño, mantener planes actualizados, permitir propuestas de cambio y mantener información actualizada."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: __________________ se define como un conjunto de indicadores seleccionados para el seguimiento y evaluación sistémica del proyecto o programa, donde su primera muestra representa una primera medición.",
+    "opciones": [
+      "Línea base",
+      "Indicador",
+      "Métrica",
+      "Hito"
+    ],
+    "respuesta": 0,
+    "explicacion": "La línea base es el conjunto de indicadores para seguimiento y evaluación, con su primera muestra como primera medición."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: ________________________ es la entrega formal de fases, actividades y tareas, así como del producto, servicio o resultado definitivo.",
+    "opciones": [
+      "Etapa de planificación",
+      "Etapa de cierre",
+      "Etapa de seguimiento y control",
+      "Etapa de ejecución"
+    ],
+    "respuesta": 1,
+    "explicacion": "La etapa de cierre es donde se realiza la entrega formal de fases, actividades, tareas y el producto/servicio final."
+  },
+  {
+    "tipo": "emparejamiento",
+    "pregunta": "Empareja las técnicas de gestión de proyectos con sus aplicaciones correspondientes:",
+    "pares": [
+      {
+        "izquierda": "Análisis FODA",
+        "derecha": "Identifica fortalezas, oportunidades, debilidades y amenazas."
+      },
+      {
+        "izquierda": "Análisis de ruta crítica",
+        "derecha": "Calcula el camino más largo para completar el proyecto."
+      },
+      {
+        "izquierda": "Análisis de valor ganado",
+        "derecha": "Mide el rendimiento del proyecto en función del costo y tiempo."
+      },
+      {
+        "izquierda": "Diagrama de flujo",
+        "derecha": "Representa visualmente los pasos de un proceso."
+      }
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada técnica tiene su aplicación: FODA-análisis estratégico, Ruta crítica-camino más largo, Valor ganado-rendimiento, Diagrama de flujo-visualización de procesos."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál de los siguientes representa un ejemplo de fracaso por mal control del alcance?",
+    "opciones": [
+      "Cumplir todos los entregables en menos tiempo.",
+      "Actualizar el cronograma con retroalimentación del equipo.",
+      "Negociar con usuarios la priorización de entregables.",
+      "Incluir funcionalidades no planificadas sin autorización formal."
+    ],
+    "respuesta": 3,
+    "explicacion": "Incluir funcionalidades no planificadas sin autorización formal es un ejemplo claro de mal control del alcance."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles son técnicas comunes para realizar un seguimiento efectivo durante la ejecución de un proyecto?",
+    "opciones": [
+      "Análisis del valor ganado (EVM)",
+      "Revisión de progreso frente al cronograma",
+      "Definir el alcance del proyecto",
+      "Revisar los objetivos del proyecto"
+    ],
+    "respuestas_correctas": [0, 1],
+    "explicacion": "Las técnicas comunes para seguimiento son: análisis del valor ganado (EVM) y revisión de progreso frente al cronograma."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "En un proyecto TI que se encuentra con retrasos en el cronograma, ¿cuál sería una forma válida de mantener el cumplimiento del alcance y calidad?",
+    "opciones": [
+      "Cambiar el gerente del proyecto sin informar al equipo.",
+      "Eliminar requisitos de calidad para ahorrar tiempo.",
+      "Reducir el alcance sin aprobación del patrocinador.",
+      "Aumentar el presupuesto para incorporar más recursos."
+    ],
+    "respuesta": 3,
+    "explicacion": "Aumentar el presupuesto para incorporar más recursos permite mantener el alcance y calidad ante retrasos en el cronograma."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "A partir del siguiente enunciado, identifique los componentes que encierra la siguiente afirmación: Los grupos de procesos de seguimiento y control del proyecto están determinados por aquellos procesos orientados a:",
+    "opciones": [
+      "Analizar el progreso y rendimiento del proyecto",
+      "Supervisar el progreso y rendimiento del proyecto",
+      "Planificar el progreso y rendimiento del proyecto",
+      "Evaluar el progreso y rendimiento del proyecto",
+      "Medir el progreso y rendimiento del proyecto"
+    ],
+    "respuestas_correctas": [0, 1, 3, 4],
+    "explicacion": "Los procesos de seguimiento y control están orientados a: analizar, supervisar, evaluar y medir el progreso y rendimiento."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "Con frecuencia, las lecciones aprendidas son puestas en segundo plano, por factores tales como:",
+    "opciones": [
+      "Presión para cumplir los plazos",
+      "Rediseño de controles en proyectos futuros",
+      "Factores de cultura organizacional",
+      "Oportunidad de mejora continua",
+      "Falta de interés o motivación"
+    ],
+    "respuestas_correctas": [0, 2, 4],
+    "explicacion": "Las lecciones aprendidas se descuidan por: presión de plazos, factores culturales organizacionales y falta de interés/motivación."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál (es) de las siguientes son actividades del proceso de control integrado de cambios?",
+    "opciones": [
+      "Documentar el impacto total de las solicitudes de cambio",
+      "Influir en la afectación general debido al control integrado de cambios",
+      "Proporcionar información para respaldar informes de estado, medición de progreso y la previsión",
+      "Mantener una base de información actualizada sobre los productos del proyecto",
+      "Revisar, analizar y aprobar todas las solicitudes de cambio"
+    ],
+    "respuestas_correctas": [0, 3, 4],
+    "explicacion": "Las actividades del control integrado incluyen: documentar impacto, mantener información actualizada y revisar/analizar/aprobar solicitudes."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "Para (Ramon Rodriguez & Mariné, 2020) un informe de rendimiento puede incluir información sobre:",
+    "opciones": [
+      "Rendimiento actual y su análisis",
+      "Perfil de nuevas contrataciones de personal",
+      "Situación de los riesgos y problemas",
+      "Cotizaciones de compras o adquisiciones",
+      "Próximas tareas",
+      "Cambios aprobados en el periodo",
+      "Errores, omisiones e inconsistencias",
+      "Grado de avance del proyecto"
+    ],
+    "respuestas_correctas": [0, 2, 4, 5, 7],
+    "explicacion": "Un informe de rendimiento incluye: rendimiento y análisis, situación de riesgos, próximas tareas, cambios aprobados y grado de avance."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "¿Cuál de las siguientes afirmaciones no es correcta, en el contexto del grupo de proceso de cierre de un proyecto?",
+    "opciones": [
+      "Cada fase de proyecto puede cerrar sus entregas",
+      "Las actividades de cierre no deben planificarse hasta la finalización del proyecto",
+      "Muy rara vez atender y satisfacer las necesidades de todos los grupos de interés",
+      "Evitar capitalizar el conocimiento y habilidades de los colaboradores en base de datos"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es INCORRECTO que las actividades de cierre no deban planificarse hasta la finalización; deben planificarse desde el inicio."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuál de los siguientes casos de proyectos son aptos para ser cerrados?",
+    "opciones": [
+      "Proyectos cancelados",
+      "Proyectos suspendidos por falta de presupuesto",
+      "Proyectos con resultados finales",
+      "Todos los proyectos deben ser cerrados independientemente de sus resultados"
+    ],
+    "respuestas_correctas": [3],
+    "explicacion": "Todos los proyectos deben ser cerrados formalmente, independientemente de sus resultados (exitosos, cancelados o suspendidos)."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Con que propósito las organizaciones competitivas dedican tiempo a capitalizar conocimiento de sus proyectos?",
+    "opciones": [
+      "Alcanzar mejores resultados en próximos proyectos",
+      "Aprender de sus proyectos exitosos o no",
+      "Cumplir por la cultura organizacional del equipo",
+      "Cumplir con las políticas de la organización ejecutable"
+    ],
+    "respuestas_correctas": [0, 1],
+    "explicacion": "Las organizaciones capitalizan conocimiento para: alcanzar mejores resultados futuros y aprender de proyectos exitosos o no."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Complete: __________________ y ______________ el trabajo del proyecto es el proceso de ___________________, _________________ y __________________ el progreso del desempeño para cumplir con los objetivos del plan.",
+    "opciones": [
+      "Monitorear; verificar; controlar; supervisar; comunicar",
+      "Verificar; controlar; supervisar; monitorear; comunicar",
+      "Monitorea; verificar; comunicar; controlar; supervisar",
+      "Controlar; supervisar; monitorear; verificar; comunicar"
+    ],
+    "respuesta": 0,
+    "explicacion": "Monitorear y controlar el trabajo del proyecto es el proceso de supervisar, monitorear y comunicar el progreso del desempeño."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "¿Cuáles de las siguientes razones corresponden a proyectos fallidos?",
+    "opciones": [
+      "Cambio en las prioridades",
+      "Verse obligado a completar un proyecto antes de tiempo",
+      "Varios aspectos: atención a las personas, procesos o tecnologías",
+      "Proyectos que no tienen éxito esperado",
+      "Proyectos nunca parecen terminar"
+    ],
+    "respuestas_correctas": [0, 1, 2, 3, 4],
+    "explicacion": "Todas las opciones representan razones por las que los proyectos pueden fallar."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Dentro del proceso de control integrado de cambios. ¿Qué tipos de cambios NO es necesario someter a procedimientos ni instancias superiores para aprobación de dichos cambios? Omisiones o errores que no afecten a….",
+    "opciones": [
+      "Cierre del proyecto",
+      "Planificación o alcance de la gestión del proyecto",
+      "Control y monitoreo de la gestión del proyecto",
+      "Ejecución de la gestión del proyecto"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los errores que NO afectan la planificación o alcance del proyecto no requieren aprobación de instancias superiores."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta que describa el propósito de la planeación estratégica en la gestión de proyectos.",
+    "opciones": [
+      "Determinar objetivos organizacionales a largo plazo y seleccionar proyectos que generen valor.",
+      "Definir objetivos organizacionales a corto plazo.",
+      "Identificar proyectos que no tienen impacto en la organización.",
+      "Eliminar la necesidad de análisis FODA."
+    ],
+    "respuesta": 0,
+    "explicacion": "La planeación estratégica determina objetivos a largo plazo y selecciona proyectos que generen valor organizacional."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione el beneficio clave de la implementación de un plan estratégico de TI.",
+    "opciones": [
+      "Alineación de TI con la estrategia empresarial",
+      "Desconexión de los objetivos organizacionales",
+      "Reducción de la eficiencia operativa",
+      "Aumento de los costos sin beneficios claros"
+    ],
+    "respuesta": 0,
+    "explicacion": "El beneficio clave de un plan estratégico de TI es la alineación de TI con la estrategia empresarial."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la característica que mejor describa un ciclo de vida de proyecto adaptativo.",
+    "opciones": [
+      "El producto se desarrolla a través de múltiples iteraciones y el alcance detallado se define para cada iteración.",
+      "El producto y los entregables se definen al comienzo del proyecto y cualquier cambio en el alcance se gestiona cuidadosamente.",
+      "El proyecto se completa sin iteraciones, siguiendo un plan detallado desde el inicio.",
+      "El enfoque se basa en la improvisación y adaptación constante sin planificación previa."
+    ],
+    "respuesta": 0,
+    "explicacion": "En el ciclo de vida adaptativo, el producto se desarrolla en múltiples iteraciones con alcance detallado definido en cada una."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción que NO corresponde a una fase del ciclo de vida de un proyecto.",
+    "opciones": [
+      "Implementación continua",
+      "Iniciación",
+      "Planificación",
+      "Cierre"
+    ],
+    "respuesta": 0,
+    "explicacion": "Implementación continua NO es una fase del ciclo de vida del proyecto. Las fases son: iniciación, planificación, ejecución, monitoreo/control y cierre."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la definición correcta de control de calidad en proyectos.",
+    "opciones": [
+      "Actividades de control y aseguramiento de que los entregables cumplan con los requisitos del cliente.",
+      "Actividades de planificación detallada del cronograma del proyecto.",
+      "Actividades de seguimiento y control de los costos del proyecto.",
+      "Actividades de cierre y evaluación final del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "El control de calidad son las actividades para asegurar que los entregables cumplan con los requisitos del cliente."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la actividad que pertenece a la fase de ejecución de un proyecto.",
+    "opciones": [
+      "Llevar a cabo el trabajo del proyecto según los planes establecidos.",
+      "Evaluar los entregables y cerrar el proyecto.",
+      "Identificación de las necesidades del negocio y estudio de factibilidad.",
+      "Creación de un pull de planes para guiar al equipo de trabajo."
+    ],
+    "respuesta": 0,
+    "explicacion": "En la fase de ejecución se lleva a cabo el trabajo del proyecto según los planes establecidos."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la característica que mejor describa los métodos ágiles.",
+    "opciones": [
+      "Se basan en ciclos iterativos y entregas incrementales.",
+      "Requieren planificación detallada desde el inicio.",
+      "Eliminan la necesidad de comunicación con el cliente.",
+      "No permiten cambios una vez iniciado el proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "Los métodos ágiles se basan en ciclos iterativos y entregas incrementales del producto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción que NO describe una habilidad crucial para un gerente de proyectos.",
+    "opciones": [
+      "Habilidad para realizar tareas repetitivas sin cambio",
+      "Habilidad para liderar equipos",
+      "Habilidad para gestionar tiempo y recursos",
+      "Habilidad para comunicarse efectivamente"
+    ],
+    "respuesta": 0,
+    "explicacion": "Realizar tareas repetitivas sin cambio NO es una habilidad crucial para un gerente de proyectos; debe adaptarse y liderar."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la definición correcta de un proyecto.",
+    "opciones": [
+      "Un esfuerzo temporal que se lleva a cabo para crear un producto, servicio o resultado único.",
+      "Una operación continua sin un objetivo específico.",
+      "Un conjunto de tareas rutinarias para mantener el negocio en funcionamiento.",
+      "Una serie de actividades realizadas sin ningún tipo de planificación."
+    ],
+    "respuesta": 0,
+    "explicacion": "Un proyecto es un esfuerzo temporal para crear un producto, servicio o resultado único."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione el factor clave que contribuye al éxito de un proyecto.",
+    "opciones": [
+      "Apoyo ejecutivo",
+      "Uso de tecnologías de última generación",
+      "Inversión financiera ilimitada",
+      "Recursos humanos abundantes"
+    ],
+    "respuesta": 0,
+    "explicacion": "El apoyo ejecutivo es un factor clave que contribuye significativamente al éxito de un proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione el ejemplo que mejor describa una actividad en la fase de cierre de un proyecto.",
+    "opciones": [
+      "Revisión Post-implantación para establecer el nivel de éxito y las lecciones aprendidas.",
+      "Identificación de las necesidades del negocio.",
+      "Creación de un pull de planes para guiar al equipo de trabajo.",
+      "Monitoreo y control de la ejecución del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "La revisión post-implantación para establecer éxito y lecciones aprendidas es una actividad típica de cierre."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la razón principal del fracaso de los proyectos de TI según el informe de CHAOS.",
+    "opciones": [
+      "Falta de apoyo ejecutivo",
+      "Uso de tecnologías desactualizadas",
+      "Exceso de presupuesto",
+      "Falta de personal capacitado"
+    ],
+    "respuesta": 0,
+    "explicacion": "Según el informe CHAOS, la falta de apoyo ejecutivo es la razón principal del fracaso de proyectos de TI."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione el rol principal del patrocinador del proyecto.",
+    "opciones": [
+      "Asumir el costo del bien, servicio, producto o resultado final derivado del proyecto.",
+      "Coordinar y guiar al equipo técnico del proyecto.",
+      "Realizar el trabajo técnico necesario para completar el proyecto.",
+      "Evaluar los entregables y cerrar el proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "El rol principal del patrocinador es asumir el costo del bien, servicio, producto o resultado final del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la definición correcta de un plan financiero en proyectos.",
+    "opciones": [
+      "Un documento que describe los recursos financieros necesarios y el costo total del proyecto.",
+      "Un desglose jerárquico de las tareas y actividades del proyecto.",
+      "Un cronograma detallado con fechas de inicio y fin del proyecto.",
+      "Un diagrama que muestra las dependencias entre las tareas del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "Un plan financiero describe los recursos financieros necesarios y el costo total del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción que mejor describa la planificación estratégica en la gestión de proyectos.",
+    "opciones": [
+      "Es el proceso de definir objetivos organizacionales a largo plazo y seleccionar proyectos que generen valor.",
+      "Es la definición de objetivos a corto plazo para proyectos específicos.",
+      "Es la selección de tecnologías para implementar en proyectos.",
+      "Es la evaluación de proyectos en base a su impacto financiero inmediato."
+    ],
+    "respuesta": 0,
+    "explicacion": "La planificación estratégica define objetivos a largo plazo y selecciona proyectos que generen valor organizacional."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta que describa el objetivo principal de la gestión de proyectos.",
+    "opciones": [
+      "Alcanzar los objetivos del proyecto dentro de los parámetros de tiempo, costos y calidad.",
+      "Aumentar la rentabilidad de la empresa.",
+      "Garantizar la satisfacción total del cliente.",
+      "Implementar nuevas tecnologías."
+    ],
+    "respuesta": 0,
+    "explicacion": "El objetivo principal de la gestión de proyectos es alcanzar objetivos dentro de los parámetros de tiempo, costos y calidad."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre el desarrollo de una metodología de gestión de proyectos en una organización.",
+    "opciones": [
+      "Adaptar las mejores prácticas a las necesidades particulares de la organización.",
+      "Adoptar metodologías sin adaptarlas a las necesidades de la organización.",
+      "Implementar solo metodologías ágiles.",
+      "Desarrollar metodologías sin la participación de los equipos de proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "El desarrollo de una metodología debe adaptar las mejores prácticas a las necesidades particulares de la organización."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la definición correcta de una estructura de desglose de trabajo (EDT).",
+    "opciones": [
+      "Un desglose jerárquico de las tareas y actividades necesarias para completar el proyecto.",
+      "Una lista de los recursos financieros necesarios para el proyecto.",
+      "Un diagrama que muestra las dependencias entre las tareas del proyecto.",
+      "Un cronograma detallado del proyecto con fechas de inicio y fin."
+    ],
+    "respuesta": 0,
+    "explicacion": "La EDT es un desglose jerárquico de las tareas y actividades necesarias para completar el proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción que NO describe un grupo de interés en un proyecto de TI.",
+    "opciones": [
+      "Competencia directa de la empresa",
+      "Patrocinador del proyecto",
+      "Equipo técnico del proyecto",
+      "Clientes y usuarios finales"
+    ],
+    "respuesta": 0,
+    "explicacion": "La competencia directa NO es un grupo de interés (stakeholder) del proyecto."
+  },
+  {
+    "tipo": "multiple_seleccion",
+    "pregunta": "Seleccione la opción correcta sobre las prácticas clave durante la pre-iniciación de un proyecto.",
+    "opciones": [
+      "Identificar al sponsor y seleccionar el director del proyecto.",
+      "Ignorar las limitaciones de alcance, tiempo y costo.",
+      "Iniciar el proyecto sin desarrollar un business case.",
+      "Evitar reuniones con el director del proyecto."
+    ],
+    "respuestas_correctas": [0],
+    "explicacion": "En la pre-iniciación es clave identificar al sponsor y seleccionar al director del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre el objetivo de la gestión de recursos humanos en un proyecto.",
+    "opciones": [
+      "Desarrollar, gestionar y liderar al equipo del proyecto.",
+      "Identificar los riesgos financieros del proyecto.",
+      "Controlar el cronograma del proyecto.",
+      "Definir los requisitos de calidad del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "El objetivo de la gestión de recursos humanos es desarrollar, gestionar y liderar al equipo del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre la importancia de identificar a los stakeholders en un proyecto.",
+    "opciones": [
+      "Permite entender sus expectativas y gestionar su influencia en el proyecto.",
+      "Es irrelevante para el éxito del proyecto.",
+      "Solo es importante para proyectos pequeños.",
+      "Se realiza solo una vez al inicio del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "Identificar stakeholders permite entender sus expectativas y gestionar su influencia en el proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre qué es un plan de gestión de riesgos.",
+    "opciones": [
+      "Un documento que describe cómo se gestionarán los riesgos durante el proyecto.",
+      "Un cronograma detallado de todas las actividades del proyecto.",
+      "Una lista de los recursos necesarios para el proyecto.",
+      "Una estructura de desglose del trabajo (EDT) del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "El plan de gestión de riesgos describe cómo se identificarán, analizarán y responderán a los riesgos del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre la finalidad del análisis de valor presente neto (VAN) en la gestión de proyectos.",
+    "opciones": [
+      "Evaluar la viabilidad económica del proyecto mediante la comparación de ingresos y costos a lo largo del tiempo.",
+      "Identificar los riesgos asociados al proyecto.",
+      "Determinar la duración del proyecto.",
+      "Asignar recursos a las actividades del proyecto"
+    ],
+    "respuesta": 0,
+    "explicacion": "El VAN evalúa la viabilidad económica comparando ingresos y costos a lo largo del tiempo."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta que describa la relación de dependencia donde una tarea no puede comenzar hasta que otra termine.",
+    "opciones": [
+      "Fin a comienzo (FS).",
+      "Comienzo a comienzo (SS).",
+      "Fin a fin (FF).",
+      "Comienzo a fin (SF)."
+    ],
+    "respuesta": 0,
+    "explicacion": "La dependencia Fin a comienzo (FS) indica que una tarea no puede comenzar hasta que otra termine."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre qué es un análisis de stakeholders.",
+    "opciones": [
+      "Un análisis que identifica y clasifica a las partes interesadas del proyecto.",
+      "Un análisis que identifica todas las tareas del proyecto.",
+      "Un análisis que determina las tecnologías necesarias para el proyecto.",
+      "Un análisis financiero del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "El análisis de stakeholders identifica y clasifica a las partes interesadas del proyecto según su influencia e interés."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre el objetivo de la gestión de la integración del proyecto.",
+    "opciones": [
+      "Asegurar que los diferentes elementos del proyecto se coordinen de manera efectiva.",
+      "Gestionar únicamente los riesgos del proyecto.",
+      "Monitorear el rendimiento del equipo de proyecto.",
+      "Definir los requisitos técnicos del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "La gestión de la integración asegura que los diferentes elementos del proyecto se coordinen de manera efectiva."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta que describa qué es un project charter.",
+    "opciones": [
+      "Un documento que autoriza formalmente un proyecto y da autoridad al gerente del proyecto.",
+      "Un documento que detalla cada tarea diaria del proyecto.",
+      "Un contrato entre el equipo del proyecto y el cliente.",
+      "Un cronograma detallado del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "El project charter autoriza formalmente un proyecto y otorga autoridad al gerente del proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la técnica correcta para estimar la duración de las actividades del proyecto.",
+    "opciones": [
+      "Estimación paramétrica.",
+      "Análisis FODA.",
+      "Diagrama de Gantt.",
+      "Análisis de Monte Carlo."
+    ],
+    "respuesta": 0,
+    "explicacion": "La estimación paramétrica utiliza relaciones estadísticas entre datos históricos y variables para estimar duraciones."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta que describa qué es una reserva de contingencia en la gestión de costos del proyecto.",
+    "opciones": [
+      "Una cantidad de presupuesto reservada para mitigar riesgos identificados.",
+      "El costo total estimado del proyecto.",
+      "El presupuesto aprobado para el proyecto.",
+      "Una cantidad de fondos reservados para cambios de alcance."
+    ],
+    "respuesta": 0,
+    "explicacion": "La reserva de contingencia es presupuesto reservado para mitigar riesgos identificados en el proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la técnica más común para descomponer el trabajo en la Estructura de Desglose de Trabajo (EDT).",
+    "opciones": [
+      "Descomposición.",
+      "Estimación paramétrica.",
+      "Diagramación de precedencia.",
+      "Análisis de Monte Carlo."
+    ],
+    "respuesta": 0,
+    "explicacion": "La descomposición es la técnica más común para dividir el trabajo del proyecto en componentes más pequeños y manejables."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre el propósito de la gestión de la comunicación en un proyecto.",
+    "opciones": [
+      "Asegurar que la información del proyecto se genere, recopile, distribuya y almacene de manera oportuna y adecuada.",
+      "Identificar los riesgos del proyecto.",
+      "Definir los requisitos técnicos del proyecto.",
+      "Monitorear el desempeño del equipo del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "La gestión de la comunicación asegura que la información se genere, recopile, distribuya y almacene oportunamente."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la técnica correcta para analizar el poder y el interés de los stakeholders.",
+    "opciones": [
+      "Matriz de poder/interés.",
+      "Análisis FODA.",
+      "Diagrama de Gantt.",
+      "Análisis de Monte Carlo."
+    ],
+    "respuesta": 0,
+    "explicacion": "La matriz de poder/interés es la técnica adecuada para analizar el poder e interés de los stakeholders."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la técnica correcta de estimación de tiempo que utiliza tres valores para calcular una media ponderada.",
+    "opciones": [
+      "Program Evaluation and Review Technique (PERT).",
+      "Método del camino crítico (CPM).",
+      "Estimación por analogía.",
+      "Diagrama de Gantt."
+    ],
+    "respuesta": 0,
+    "explicacion": "PERT utiliza tres valores (optimista, pesimista, más probable) para calcular una media ponderada de duración."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción que NO corresponde a un objetivo del project charter.",
+    "opciones": [
+      "Establecer el presupuesto detallado del proyecto.",
+      "Definir los objetivos del proyecto.",
+      "Identificar las partes interesadas clave.",
+      "Proporcionar al gerente del proyecto la autoridad para utilizar recursos."
+    ],
+    "respuesta": 0,
+    "explicacion": "El presupuesto detallado NO es parte del project charter; se desarrolla en la planificación."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre la diferencia entre duración y esfuerzo en la gestión del tiempo del proyecto.",
+    "opciones": [
+      "La duración se refiere al tiempo total en el calendario, mientras que el esfuerzo se refiere a la cantidad de jornadas u horas de trabajo necesarias.",
+      "La duración se refiere a la cantidad de recursos necesarios, mientras que el esfuerzo se refiere al tiempo total en el calendario.",
+      "La duración se refiere a la estimación de costos, mientras que el esfuerzo se refiere a la cantidad de recursos necesarios.",
+      "La duración se refiere al tiempo necesario para completar el proyecto, mientras que el esfuerzo se refiere a las dependencias entre actividades."
+    ],
+    "respuesta": 0,
+    "explicacion": "Duración es el tiempo total en el calendario; esfuerzo es la cantidad de jornadas u horas de trabajo necesarias."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre el objetivo principal de la gestión de adquisiciones del proyecto.",
+    "opciones": [
+      "Obtener bienes y servicios externos necesarios para el proyecto.",
+      "Controlar el presupuesto del proyecto.",
+      "Definir el alcance del proyecto.",
+      "Monitorear los riesgos del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "La gestión de adquisiciones busca obtener bienes y servicios externos necesarios para el proyecto."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta que describa qué es un atributo de actividad en la gestión del cronograma.",
+    "opciones": [
+      "Información relacionada con el cronograma sobre cada actividad, como predecesores, sucesores y restricciones.",
+      "Una lista de todas las actividades necesarias para completar el trabajo del proyecto.",
+      "Una técnica para descomponer el trabajo en tareas más pequeñas.",
+      "Una herramienta para estimar los costos del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "Los atributos de actividad incluyen información sobre predecesores, sucesores, restricciones y otros detalles del cronograma."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre la finalidad de la gestión de costos del proyecto.",
+    "opciones": [
+      "Asegurar que el proyecto se complete dentro del presupuesto aprobado.",
+      "Minimizar el tiempo necesario para completar el proyecto.",
+      "Identificar los riesgos financieros del proyecto.",
+      "Definir los requisitos de calidad del proyecto."
+    ],
+    "respuesta": 0,
+    "explicacion": "La gestión de costos asegura que el proyecto se complete dentro del presupuesto aprobado."
+  },
+  {
+    "tipo": "multiple",
+    "pregunta": "Seleccione la opción correcta sobre el documento que se utiliza para autorizar formalmente la existencia de un proyecto.",
+    "opciones": [
+      "El project charter.",
+      "El business case.",
+      "El acta de reuniones.",
+      "El plan de gestión de riesgos."
+    ],
+    "respuesta": 0,
+    "explicacion": "El project charter es el documento que autoriza formalmente la existencia de un proyecto."
+  }
+]

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulador de Preguntas - Gestion de Proyectos Informaticos</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { 
+      theme: {
+        extend: {
+          animation: {
+            'fade-in': 'fadeIn 0.3s ease-in-out',
+            'slide-up': 'slideUp 0.3s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(10px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Estilos mejorados y modernos */
+    body {
+      background: #eeeded;
+    }
+
+    .img-pregunta {
+      @apply w-full max-w-3xl mx-auto rounded-xl border-2 border-gray-200 shadow-lg my-4 transition-transform hover:scale-[1.02];
+    }
+
+    .card { 
+      @apply bg-white/95 backdrop-blur-md shadow-2xl rounded-3xl border border-white/20 p-6;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn { 
+      @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-medium shadow-md transition-all duration-200;
+      @apply hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm;
+    }
+
+    .btn-primary { 
+      @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-0;
+      @apply hover:from-indigo-700 hover:to-purple-700;
+      @apply focus:ring-4 focus:ring-indigo-300;
+    }
+
+    .btn-ghost { 
+      @apply bg-white/90 border border-gray-200 text-gray-700;
+      @apply hover:bg-white hover:border-gray-300 hover:text-gray-900;
+    }
+
+    .pill { 
+      @apply text-xs px-4 py-2 rounded-full font-semibold;
+      @apply bg-gradient-to-r from-blue-100 to-indigo-100 text-indigo-700 border border-indigo-200;
+    }
+
+    .opt { 
+      @apply w-full text-left px-5 py-4 rounded-xl border-2 bg-white transition-all duration-200;
+      @apply hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:border-indigo-300;
+      @apply hover:shadow-md hover:scale-[1.02] active:scale-[0.98];
+    }
+
+    .opt[disabled] { 
+      @apply opacity-75 cursor-not-allowed hover:scale-100;
+    }
+
+    /* Estilos para las cajas de opciones */
+    #opciones button {
+      @apply w-full bg-white rounded-xl shadow-md p-4 text-left border-2 border-gray-200;
+      @apply hover:border-indigo-400 hover:shadow-lg transition-all duration-200;
+      @apply text-gray-800 font-medium;
+    }
+
+    #opciones button:hover:not([disabled]) {
+      @apply transform scale-[1.02];
+    }
+
+    #opciones button[disabled] {
+      @apply cursor-not-allowed opacity-90;
+    }
+
+    .ring-ok { 
+      @apply ring-4 ring-green-400 border-green-500 bg-green-50;
+    }
+
+    .ring-sel { 
+      @apply ring-4 ring-indigo-400 border-indigo-500;
+    }
+
+    select {
+      @apply bg-white border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium;
+      @apply focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500;
+      @apply transition-all duration-200 hover:border-gray-300;
+    }
+
+    /* Header mejorado */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+
+    /* Animaciones suaves */
+    #contenedor > * {
+      animation: fade-in 0.3s ease-in-out;
+    }
+
+    /* Estado mejorado */
+    #estado {
+      @apply bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200;
+    }
+
+    /* Scrollbar personalizado */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      @apply bg-gray-100;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      @apply bg-gradient-to-b from-indigo-400 to-purple-500 rounded-full;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      @apply from-indigo-500 to-purple-600;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="sticky top-0 z-50 border-b border-gray-200/50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center gap-4">
+      <div class="text-3xl animate-pulse">🧠</div>
+      <h1 class="font-bold text-xl sm:text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+        Simulador de Preguntas
+      </h1>
+      <span class="text-sm text-gray-500 hidden md:inline">Gestion de Proyectos Informáticos</span>
+      <div class="ml-auto flex items-center gap-3">
+        <span id="userInfo" class="hidden sm:inline text-sm font-medium text-gray-600"></span>
+        <button id="btnLogout" class="btn btn-ghost text-sm hidden">🚪 Salir</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-4 md:p-6 space-y-4">
+    <section id="appPanel" class="card animate-slide-up mt-4 p-4 rounded-xl" style="background-color: #ffffff;">
+      <div class="flex flex-wrap gap-3 items-center mb-4 mt-2">
+        <span class="pill text-sm flex items-center gap-2">
+          📚 Gestion de Proyectos Informáticos
+        </span>
+        
+        <select id="modo" class="flex-1 min-w-[200px] border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition-all duration-200 hover:border-gray-300">
+          <option value="examen">📝 Examen (30 Preguntas)</option>
+          <option value="estudio">📖 Estudio (Todas las Preguntas)</option>
+        </select>
+        
+        <select id="minutos" class="flex-1 min-w-[150px] border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition-all duration-200 hover:border-gray-300">
+          <option value="60">⏰ 60 minutos</option>
+          <option value="30">⏰ 30 minutos</option>
+          <option value="15">⏰ 15 minutos</option>
+          <option value="0">∞ Sin tiempo</option>
+        </select>
+
+        <div class="ml-auto flex items-center gap-2">
+          <span class="pill text-sm flex items-center gap-2">
+            ⏱ <span id="timer" class="font-mono font-bold">--:--</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-4 mt-10">
+        <button id="btnEmpezar" class="btn btn-primary flex-1 min-w-[50px] border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition-all duration-200 hover:border-gray-300">
+          🚀 Empezar
+        </button>
+        <button id="btnGuardar" class="btn btn-ghost border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition-all duration-200 hover:border-gray-300">
+          💾 Guardar
+        </button>
+        <button id="btnCargar" class="btn btn-ghost border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition-all duration-200 hover:border-gray-300">
+          📂 Cargar
+        </button>
+      </div>
+
+      <div id="estado" class="p-4 rounded-xl text-sm font-medium text-gray-700">
+        Selecciona el modo de estudio/examen y presiona <strong>Empezar</strong> para comenzar.
+      </div>
+      
+      <div id="contenedor" class="mt-4"></div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    import { 
+      getAuth, 
+      onAuthStateChanged, 
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAs_LBouq2njfy0cJHJjuiUfASC3RqVKkM",
+      authDomain: "practicas-comunitario.firebaseapp.com",
+      projectId: "practicas-comunitario",
+      storageBucket: "practicas-comunitario.firebasestorage.app",
+      messagingSenderId: "874017448238",
+      appId: "1:874017448238:web:03928054e98441838d1abf"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const correosPermitidos = [
+      "dpachecog2@unemi.edu.ec", 
+      "cnavarretem4@unemi.edu.ec",
+      "htigrer@unemi.edu.ec",
+      "gorellanas2@unemi.edu.ec",
+      "iastudillol@unemi.edu.ec",
+      "sgavilanezp2@unemi.edu.ec",
+      "jzamoram9@unemi.edu.ec",
+      "fcarrillop@unemi.edu.ec",
+      "naguilarb@unemi.edu.ec",
+      "ehidalgoc4@unemi.edu.ec",
+      "lbrionesg3@unemi.edu.ec",
+      "xsalvadorv@unemi.edu.ec",
+      "nbravop4@unemi.edu.ec",
+      "jmoreirap6@unemi.edu.ec",
+      "kholguinb2@unemi.edu.ec"
+    ];
+
+    // 🔐 Validar el acceso al cargar
+    onAuthStateChanged(auth, (user) => {
+      const logoutBtn = document.getElementById("btnLogout");
+      const userInfo = document.getElementById("userInfo");
+
+      if (!user) {
+        window.location.href = "index.html";
+        return;
+      }
+
+      if (!correosPermitidos.includes(user.email)) {
+        alert("Tu cuenta no está autorizada.");
+        signOut(auth);
+        window.location.href = "index.html";
+        return;
+      }
+
+      // Mostrar nombre y correo del usuario
+      if (userInfo) {
+        userInfo.textContent = `${user.displayName} • ${user.email}`;
+        userInfo.classList.remove("hidden");
+      }
+
+      if (logoutBtn) {
+        logoutBtn.classList.remove("hidden");
+        logoutBtn.addEventListener("click", () => {
+          signOut(auth);
+          window.location.href = "index.html";
+        });
+      }
+    });
+  </script>
+  <script src="app.js?v=11"></script>
+</body>
+</html>
