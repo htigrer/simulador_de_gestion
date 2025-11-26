@@ -31,7 +31,6 @@
   </script>
 
   <style>
-    /* Estilos mejorados y modernos */
     body {
       background: #eeeded;
     }
@@ -76,7 +75,6 @@
       @apply opacity-75 cursor-not-allowed hover:scale-100;
     }
 
-    /* Estilos para las cajas de opciones */
     #opciones button {
       @apply w-full bg-white rounded-xl shadow-md p-4 text-left border-2 border-gray-200;
       @apply hover:border-indigo-400 hover:shadow-lg transition-all duration-200;
@@ -105,25 +103,20 @@
       @apply transition-all duration-200 hover:border-gray-300;
     }
 
-    /* Header mejorado */
     header {
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
 
-
-    /* Animaciones suaves */
     #contenedor > * {
       animation: fade-in 0.3s ease-in-out;
     }
 
-    /* Estado mejorado */
     #estado {
       @apply bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200;
     }
 
-    /* Scrollbar personalizado */
     ::-webkit-scrollbar {
       width: 10px;
     }
@@ -183,13 +176,13 @@
       </div>
 
       <div class="flex flex-wrap gap-3 mb-4 mt-10">
-        <button id="btnEmpezar" class="btn btn-primary flex-1 min-w-[50px] border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition-all duration-200 hover:border-gray-300">
+        <button id="btnEmpezar" class="btn btn-primary flex-1 min-w-[50px]">
           🚀 Empezar
         </button>
-        <button id="btnGuardar" class="btn btn-ghost border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition-all duration-200 hover:border-gray-300">
+        <button id="btnGuardar" class="btn btn-ghost">
           💾 Guardar
         </button>
-        <button id="btnCargar" class="btn btn-ghost border-2 border-gray-200 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition-all duration-200 hover:border-gray-300">
+        <button id="btnCargar" class="btn btn-ghost">
           📂 Cargar
         </button>
       </div>
@@ -202,14 +195,13 @@
     </section>
   </main>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-    import { 
-      getAuth, 
-      onAuthStateChanged, 
-      signOut
-    } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
+  <script>
+    // ========== FIREBASE CONFIG Y VALIDACIÓN ==========
     const firebaseConfig = {
       apiKey: "AIzaSyAs_LBouq2njfy0cJHJjuiUfASC3RqVKkM",
       authDomain: "practicas-comunitario.firebaseapp.com",
@@ -219,29 +211,69 @@
       appId: "1:874017448238:web:03928054e98441838d1abf"
     };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
-    const correosPermitidos = [
-      "dpachecog2@unemi.edu.ec", 
-      "cnavarretem4@unemi.edu.ec",
-      "htigrer@unemi.edu.ec",
-      "gorellanas2@unemi.edu.ec",
-      "iastudillol@unemi.edu.ec",
-      "sgavilanezp2@unemi.edu.ec",
-      "jzamoram9@unemi.edu.ec",
-      "fcarrillop@unemi.edu.ec",
-      "naguilarb@unemi.edu.ec",
-      "ehidalgoc4@unemi.edu.ec",
-      "lbrionesg3@unemi.edu.ec",
-      "xsalvadorv@unemi.edu.ec",
-      "nbravop4@unemi.edu.ec",
-      "jmoreirap6@unemi.edu.ec",
+    const correosDosDispositivos = [
+      "dpachecog2@unemi.edu.ec", "htigrer@unemi.edu.ec", "sgavilanezp2@unemi.edu.ec", 
+      "jzamoram9@unemi.edu.ec", "fcarrillop@unemi.edu.ec", "naguilarb@unemi.edu.ec", 
       "kholguinb2@unemi.edu.ec"
     ];
 
-    // 🔐 Validar el acceso al cargar
-    onAuthStateChanged(auth, (user) => {
+    const correosUnDispositivo = [
+      "cnavarretem4@unemi.edu.ec", "gorellanas2@unemi.edu.ec", "ehidalgoc4@unemi.edu.ec", 
+      "lbrionesg3@unemi.edu.ec", "xsalvadorv@unemi.edu.ec", "nbravop4@unemi.edu.ec", 
+      "jmoreirap6@unemi.edu.ec", "jcastrof8@unemi.edu.ec"
+    ];
+
+    const correosPermitidos = [...correosDosDispositivos, ...correosUnDispositivo];
+
+    function obtenerDeviceId() {
+      let deviceId = localStorage.getItem('device_id_seguro');
+      if (!deviceId) {
+        deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now();
+        localStorage.setItem('device_id_seguro', deviceId);
+      }
+      return deviceId;
+    }
+
+    async function validarDispositivo(user) {
+      const email = user.email;
+      const miDeviceId = obtenerDeviceId();
+      let limiteDispositivos = correosUnDispositivo.includes(email) ? 1 : 2;
+
+      const docRef = db.collection("usuarios_seguros").doc(email);
+      const docSnap = await docRef.get();
+
+      if (docSnap.exists) {
+        const datos = docSnap.data();
+        let listaDispositivos = datos.dispositivos || [];
+        
+        if (listaDispositivos.includes(miDeviceId)) {
+          return true;
+        } else {
+          if (listaDispositivos.length < limiteDispositivos) {
+            listaDispositivos.push(miDeviceId);
+            await docRef.set({ dispositivos: listaDispositivos }, { merge: true });
+            return true;
+          } else {
+            alert(`⛔ ACCESO DENEGADO ⛔\n\nYa tienes ${limiteDispositivos} dispositivo(s) registrado(s).\nNo puedes iniciar sesión en otro equipo.`);
+            await auth.signOut();
+            window.location.href = "index.html";
+            return false;
+          }
+        }
+      } else {
+        await docRef.set({
+          dispositivos: [miDeviceId],
+          fecha_registro: new Date().toISOString()
+        });
+        return true;
+      }
+    }
+
+    auth.onAuthStateChanged(async (user) => {
       const logoutBtn = document.getElementById("btnLogout");
       const userInfo = document.getElementById("userInfo");
 
@@ -252,26 +284,31 @@
 
       if (!correosPermitidos.includes(user.email)) {
         alert("Tu cuenta no está autorizada.");
-        signOut(auth);
+        await auth.signOut();
         window.location.href = "index.html";
         return;
       }
 
-      // Mostrar nombre y correo del usuario
+      const dispositivoValido = await validarDispositivo(user);
+      if (!dispositivoValido) {
+        return;
+      }
+
       if (userInfo) {
-        userInfo.textContent = `${user.displayName} • ${user.email}`;
+        userInfo.textContent = `${user.displayName || user.email}`;
         userInfo.classList.remove("hidden");
       }
 
       if (logoutBtn) {
         logoutBtn.classList.remove("hidden");
         logoutBtn.addEventListener("click", () => {
-          signOut(auth);
+          auth.signOut();
           window.location.href = "index.html";
         });
       }
     });
   </script>
+
   <script src="app.js?v=11"></script>
 </body>
 </html>

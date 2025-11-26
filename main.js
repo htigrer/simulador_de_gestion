@@ -13,7 +13,8 @@ const firebaseConfig = {
   projectId: "practicas-comunitario",
   storageBucket: "practicas-comunitario.firebasestorage.app",
   messagingSenderId: "874017448238",
-  appId: "1:874017448238:web:03928054e98441838d1abf"
+  appId: "1:874017448238:web:8a52e43c1bf2b57d8d1abf",
+  measurementId: "G-VX1ZD1HN1T"
 };
 
 const app = initializeApp(firebaseConfig);
