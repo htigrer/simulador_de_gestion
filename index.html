@@ -1,256 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio - Gestion de Proyectos Informaticos</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f0eff7;
-      color: #fff;
-    }
-
-    .container {
-      background: rgba(85, 83, 248, 0.849);
-      padding: 40px 60px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      text-align: center;
-      backdrop-filter: blur(10px);
-      max-width: 400px;
-      width: 90%;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    p {
-      margin-bottom: 30px;
-      font-size: 1.1rem;
-    }
-
-    #loginBtn {
-      background: #fff;
-      color: #3F3D56;
-      border: none;
-      padding: 14px 28px;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-    }
-
-    #loginBtn:hover {
-      background: #3F3D56;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-
-    #loginBtn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    footer {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.7);
-    }
-
-    @media (max-width: 500px) {
-      .container {
-        padding: 30px 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador - Gestión de Proyectos Informáticos</title>
+    <link rel="stylesheet" href="style.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Bienvenido</h1>
-    <p>Inicia sesión con Google para continuar</p>
-    <button id="loginBtn"><i class="fab fa-google"></i> Iniciar sesión con Google</button>
-    <footer>&copy; 2025 Gestion de Proyectos Informáticos</footer>
-  </div>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-brain" style="color: #1a73e8;"></i>
+            <h1>Simulador <span class="subtitle">Gestión de Proyectos Informáticos</span></h1>
+        </div>
+        <button id="btn-logout" class="btn-secondary hidden" style="width: auto; margin: 0;">Cerrar Sesión</button>
+    </header>
 
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyAs_LBouq2njfy0cJHJjuiUfASC3RqVKkM",
-      authDomain: "practicas-comunitario.firebaseapp.com",
-      projectId: "practicas-comunitario",
-      storageBucket: "practicas-comunitario.firebasestorage.app",
-      messagingSenderId: "874017448238",
-      appId: "1:874017448238:web:03928054e98441838d1abf"
-    };
-
-    // Inicializar Firebase
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-    const provider = new firebase.auth.GoogleAuthProvider();
-
-    // 📌 Correos con límite de 2 dispositivos
-    const correosDosDispositivos = [
-      "dpachecog2@unemi.edu.ec", 
-      "htigrer@unemi.edu.ec", 
-      "sgavilanezp2@unemi.edu.ec", 
-      "jzamoram9@unemi.edu.ec", 
-      "fcarrillop@unemi.edu.ec", 
-      "naguilarb@unemi.edu.ec", 
-      "kholguinb2@unemi.edu.ec"
-    ];
-
-    // 📌 Correos con límite de 1 dispositivo
-    const correosUnDispositivo = [
-      "cnavarretem4@unemi.edu.ec", 
-      "gorellanas2@unemi.edu.ec", 
-      "ehidalgoc4@unemi.edu.ec", 
-      "lbrionesg3@unemi.edu.ec", 
-      "xsalvadorv@unemi.edu.ec", 
-      "nbravop4@unemi.edu.ec", 
-      "jmoreirap6@unemi.edu.ec", 
-      "jcastrof8@unemi.edu.ec"
-    ];
-
-    // Lista completa de correos permitidos
-    const correosPermitidos = [
-      ...correosDosDispositivos,
-      ...correosUnDispositivo
-    ];
-
-    // 🔑 Función para obtener ID único del dispositivo
-    function obtenerDeviceId() {
-      let deviceId = localStorage.getItem('device_id_seguro');
-      if (!deviceId) {
-        deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now();
-        localStorage.setItem('device_id_seguro', deviceId);
-      }
-      return deviceId;
-    }
-
-    // 🛡️ Validar dispositivo según el tipo de correo
-    async function validarDispositivo(user) {
-      const email = user.email;
-      const miDeviceId = obtenerDeviceId();
-      
-      // Determinar el límite de dispositivos según el correo
-      let limiteDispositivos = 2;
-      if (correosUnDispositivo.includes(email)) {
-        limiteDispositivos = 1;
-      }
-
-      // Consultar la base de datos
-      const docRef = db.collection("usuarios_seguros").doc(email);
-      const docSnap = await docRef.get();
-
-      if (docSnap.exists) {
-        const datos = docSnap.data();
-        let listaDispositivos = datos.dispositivos || [];
+    <div class="container" id="auth-screen">
+        <h2>Bienvenido</h2>
+        <p>Inicia sesión para acceder al simulador</p>
         
-        if (listaDispositivos.includes(miDeviceId)) {
-          return true;
-        } else {
-          if (listaDispositivos.length < limiteDispositivos) {
-            listaDispositivos.push(miDeviceId);
-            await docRef.set({ dispositivos: listaDispositivos }, { merge: true });
-            return true;
-          } else {
-            alert(`⛔ ACCESO DENEGADO ⛔\n\nYa tienes ${limiteDispositivos} dispositivo(s) registrado(s).\nNo puedes iniciar sesión en otro equipo.`);
-            await auth.signOut();
-            return false;
-          }
-        }
-      } else {
-        await docRef.set({
-          dispositivos: [miDeviceId],
-          fecha_registro: new Date().toISOString()
-        });
-        return true;
-      }
-    }
+        <button id="btn-google" style="
+            background-color: white;
+            color: #3c4043;
+            border: 1px solid #dadce0;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+        ">
+            <i class="fa-brands fa-google" style="font-size: 1.2rem;"></i> 
+            Acceder con Google
+        </button>
+    </div>
 
-    // 🔐 Monitor de autenticación
-    auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        if (!correosPermitidos.includes(user.email)) {
-          alert("ACCESO RESTRINGIDO: Tu correo no está autorizado.");
-          await auth.signOut();
-          return;
-        }
+    <div class="container hidden" id="setup-screen">
+        <div class="controls-bar">
+            <div class="control-group">
+                <label>Materia</label>
+                <select disabled><option>Gestión de Proyectos Informáticos</option></select>
+            </div>
 
-        // Validar dispositivo
-        const loginBtn = document.getElementById('loginBtn');
-        loginBtn.textContent = 'Verificando dispositivo...';
-        loginBtn.disabled = true;
+            <div class="control-group">
+                <label>Modo</label>
+                <select id="mode-select">
+                    <option value="exam">📝 Examen (30 Preguntas)</option>
+                    <option value="study">📚 Estudio (Todas las preguntas)</option>
+                </select>
+            </div>
 
-        const dispositivoValido = await validarDispositivo(user);
+            <div class="control-group">
+                <label>Tiempo</label>
+                <select id="time-select">
+                    <option value="60">60 minutos</option>
+                    <option value="30">30 minutos</option>
+                    <option value="15">15 minutos</option>
+                    <option value="infinity">Sin tiempo</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <p>Hola, <span id="user-display" style="font-weight: bold; color: #1a73e8;">Usuario</span>.</p>
+            <p style="color: #28a745; font-size: 0.9rem;"><i class="fa-solid fa-shield-halved"></i> Dispositivo verificado</p>
+            <button id="btn-start" class="btn-primary">Empezar</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="quiz-screen" style="max-width: 700px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+            <span id="timer-display" style="color: #ea4335; font-size: 1.2rem; font-weight: bold;">00:00</span>
+            <span id="progress-display" style="font-weight: 600;">Pregunta 1</span>
+        </div>
         
-        if (dispositivoValido) {
-          window.location.href = "preguntas.html";
-        } else {
-          loginBtn.textContent = 'Iniciar sesión con Google';
-          loginBtn.disabled = false;
-        }
-      }
-    });
+        <div class="question-box">
+            <div id="question-type-badge" style="display: inline-block; padding: 4px 12px; background: #e8f0fe; color: #1a73e8; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 10px;"></div>
+            <h2 id="question-text" style="font-size: 1.1rem; line-height: 1.5;">Cargando...</h2>
+        </div>
 
-    // Función para inicializar el botón de login
-    function inicializarLogin() {
-      const loginBtn = document.getElementById("loginBtn");
-      
-      if (!loginBtn) {
-        console.error("Error: No se encontró el botón de login con id 'loginBtn'");
-        return;
-      }
-      
-      loginBtn.addEventListener("click", () => {
-        loginBtn.disabled = true;
-        loginBtn.textContent = 'Iniciando sesión...';
+        <div class="options-box" id="options-container"></div>
 
-        auth.signInWithPopup(provider)
-          .then(result => {
-            console.log("Usuario autenticado:", result.user);
-          })
-          .catch(error => {
-            console.error("Error login:", error);
-            alert(`Error al iniciar sesión: ${error.message}`);
-            loginBtn.disabled = false;
-            loginBtn.textContent = 'Iniciar sesión con Google';
-          });
-      });
-    }
+        <div style="text-align: right; margin-top: 20px;">
+            <button id="btn-next-question" class="btn-primary hidden" style="width: auto; padding: 10px 30px;">
+                Siguiente <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
 
-    // Esperar a que el DOM esté listo
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", inicializarLogin);
-    } else {
-      inicializarLogin();
-    }
-  </script>
+    <div class="container hidden" id="result-screen">
+        <h2>Finalizado</h2>
+        <p>Tu calificación es:</p>
+        <h1 id="score-final" style="font-size: 3rem; color: #1a73e8; margin: 10px 0;">0/0</h1>
+        
+        <button id="btn-review" class="btn-secondary" style="margin-bottom: 10px; border: 1px solid #1a73e8; color: #1a73e8;">
+            <i class="fa-solid fa-list-check"></i> Revisar Respuestas
+        </button>
+        
+        <button onclick="location.reload()" class="btn-primary">Volver al Inicio</button>
+    </div>
 
+    <div class="container hidden" id="review-screen" style="max-width: 800px; text-align: left;">
+        <h2 style="text-align: center; color: #1a73e8;">Revisión</h2>
+        <div id="review-container" style="max-height: 60vh; overflow-y: auto; padding-right: 10px;"></div>
+        <button onclick="location.reload()" class="btn-primary" style="margin-top: 20px;">Finalizar</button>
+    </div>
+
+    <script type="module" src="script.js?v=1"></script>
 </body>
 </html>

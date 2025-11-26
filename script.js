@@ -1,4 +1,38 @@
-[
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// === 1. CONFIGURACIÓN FIREBASE ===
+const firebaseConfig = {
+  apiKey: "AIzaSyAs_LBouq2njfy0cJHJjuiUfASC3RqVKkM",
+  authDomain: "practicas-comunitario.firebaseapp.com",
+  projectId: "practicas-comunitario",
+  storageBucket: "practicas-comunitario.firebasestorage.app",
+  messagingSenderId: "874017448238",
+  appId: "1:874017448238:web:03928054e98441838d1abf"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// === 2. LISTAS DE CORREOS AUTORIZADOS ===
+const correosDosDispositivos = [
+    "dpachecog2@unemi.edu.ec", "htigrer@unemi.edu.ec", "sgavilanezp2@unemi.edu.ec", 
+    "jzamoram9@unemi.edu.ec", "fcarrillop@unemi.edu.ec", "naguilarb@unemi.edu.ec", 
+    "kholguinb2@unemi.edu.ec"
+];
+
+const correosUnDispositivo = [
+    "cnavarretem4@unemi.edu.ec", "gorellanas2@unemi.edu.ec", "ehidalgoc4@unemi.edu.ec", 
+    "lbrionesg3@unemi.edu.ec", "xsalvadorv@unemi.edu.ec", "nbravop4@unemi.edu.ec", 
+    "jmoreirap6@unemi.edu.ec", "jcastrof8@unemi.edu.ec"
+];
+
+const correosPermitidos = [...correosDosDispositivos, ...correosUnDispositivo];
+
+// === 3. BANCO DE PREGUNTAS (110 PREGUNTAS) ===
+const bancoPreguntas = [
   {
     "tipo": "multiple",
     "pregunta": "En la gestión de proyectos, ¿podemos decir que los procesos son parte de una cadena de calidad cuándo?",
@@ -1473,4 +1507,485 @@
     "respuesta": 0,
     "explicacion": "El project charter es el documento que autoriza formalmente la existencia de un proyecto."
   }
-]
+];
+
+// VARIABLES GLOBALES
+let preguntasExamen = [];
+let indiceActual = 0;
+let respuestasUsuario = []; 
+let seleccionTemporal = null;
+let seleccionesTemporales = []; // Para selección múltiple
+let tiempoRestante = 0;
+let intervaloTiempo;
+
+// REFERENCIAS HTML
+const authScreen = document.getElementById('auth-screen');
+const setupScreen = document.getElementById('setup-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const resultScreen = document.getElementById('result-screen');
+const reviewScreen = document.getElementById('review-screen');
+const btnLogout = document.getElementById('btn-logout');
+const btnNextQuestion = document.getElementById('btn-next-question');
+
+// === 4. FUNCIÓN: OBTENER ID ÚNICO DEL DISPOSITIVO ===
+function obtenerDeviceId() {
+    let deviceId = localStorage.getItem('device_id_seguro');
+    if (!deviceId) {
+        deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now();
+        localStorage.setItem('device_id_seguro', deviceId);
+    }
+    return deviceId;
+}
+
+// === 5. VALIDACIÓN DE DISPOSITIVOS ===
+async function validarDispositivo(user) {
+    const email = user.email;
+    const miDeviceId = obtenerDeviceId();
+    let limiteDispositivos = correosUnDispositivo.includes(email) ? 1 : 2;
+
+    const docRef = doc(db, "usuarios_seguros", email);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        const datos = docSnap.data();
+        let listaDispositivos = datos.dispositivos || [];
+        
+        if (listaDispositivos.includes(miDeviceId)) {
+            return true;
+        } else {
+            if (listaDispositivos.length < limiteDispositivos) {
+                listaDispositivos.push(miDeviceId);
+                await setDoc(docRef, { dispositivos: listaDispositivos }, { merge: true });
+                return true;
+            } else {
+                alert(`⛔ ACCESO DENEGADO ⛔\n\nYa tienes ${limiteDispositivos} dispositivo(s) registrado(s).\nNo puedes iniciar sesión en otro equipo.`);
+                await signOut(auth);
+                location.reload();
+                return false;
+            }
+        }
+    } else {
+        await setDoc(docRef, {
+            dispositivos: [miDeviceId],
+            fecha_registro: new Date().toISOString()
+        });
+        return true;
+    }
+}
+
+// === 6. MONITOR DE AUTENTICACIÓN ===
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        if (correosPermitidos.includes(user.email)) {
+            const titulo = document.querySelector('h2');
+            if(titulo) titulo.innerText = "Verificando Dispositivo...";
+            
+            const dispositivoValido = await validarDispositivo(user);
+            
+            if (dispositivoValido) {
+                authScreen.classList.add('hidden');
+                setupScreen.classList.remove('hidden');
+                btnLogout.classList.remove('hidden');
+                document.getElementById('user-display').innerText = user.email;
+                if(titulo) titulo.innerText = "Bienvenido";
+            }
+        } else {
+            alert("ACCESO RESTRINGIDO: Tu correo no está autorizado.");
+            signOut(auth);
+        }
+    } else {
+        authScreen.classList.remove('hidden');
+        setupScreen.classList.add('hidden');
+        quizScreen.classList.add('hidden');
+        resultScreen.classList.add('hidden');
+        reviewScreen.classList.add('hidden');
+        btnLogout.classList.add('hidden');
+    }
+});
+
+// === 7. EVENTOS DE AUTENTICACIÓN ===
+document.getElementById('btn-google').addEventListener('click', () => {
+    signInWithPopup(auth, new GoogleAuthProvider()).catch(e => alert("Error Google: " + e.message));
+});
+
+btnLogout.addEventListener('click', () => { 
+    signOut(auth); 
+    location.reload(); 
+});
+
+// === 8. INICIO DEL EXAMEN ===
+document.getElementById('btn-start').addEventListener('click', () => {
+    const tiempo = document.getElementById('time-select').value;
+    const modo = document.getElementById('mode-select').value;
+
+    if (tiempo !== 'infinity') { 
+        tiempoRestante = parseInt(tiempo) * 60; 
+        iniciarReloj(); 
+    } else { 
+        document.getElementById('timer-display').innerText = "--:--"; 
+    }
+    
+    if (modo === 'study') {
+        preguntasExamen = [...bancoPreguntas].sort(() => 0.5 - Math.random());
+    } else {
+        preguntasExamen = [...bancoPreguntas].sort(() => 0.5 - Math.random()).slice(0, 30);
+    }
+    
+    respuestasUsuario = [];
+    indiceActual = 0;
+    setupScreen.classList.add('hidden');
+    quizScreen.classList.remove('hidden');
+    cargarPregunta();
+});
+
+// === 9. CARGAR PREGUNTA ===
+function cargarPregunta() {
+    seleccionTemporal = null;
+    seleccionesTemporales = [];
+    btnNextQuestion.classList.add('hidden');
+    
+    if (indiceActual >= preguntasExamen.length) { 
+        terminarQuiz(); 
+        return; 
+    }
+    
+    const pregunta = preguntasExamen[indiceActual];
+    const tipo = pregunta.tipo;
+    
+    // Mostrar tipo de pregunta
+    const badge = document.getElementById('question-type-badge');
+    const tiposTexto = {
+        'multiple': '📝 Opción Múltiple',
+        'multiple_seleccion': '☑️ Selección Múltiple',
+        'emparejamiento': '🔗 Emparejamiento'
+    };
+    badge.textContent = tiposTexto[tipo] || tipo;
+    
+    document.getElementById('question-text').innerText = `${indiceActual + 1}. ${pregunta.pregunta}`;
+    const cont = document.getElementById('options-container');
+    cont.innerHTML = '';
+    
+    if (tipo === 'multiple') {
+        cargarPreguntaMultiple(pregunta, cont);
+    } else if (tipo === 'multiple_seleccion') {
+        cargarPreguntaSeleccionMultiple(pregunta, cont);
+    } else if (tipo === 'emparejamiento') {
+        cargarPreguntaEmparejamiento(pregunta, cont);
+    }
+    
+    document.getElementById('progress-display').innerText = `Pregunta ${indiceActual + 1} de ${preguntasExamen.length}`;
+
+    if(indiceActual === preguntasExamen.length - 1) {
+        btnNextQuestion.innerHTML = 'Finalizar <i class="fa-solid fa-check"></i>';
+    } else {
+        btnNextQuestion.innerHTML = 'Siguiente <i class="fa-solid fa-arrow-right"></i>';
+    }
+}
+
+// === 10. CARGAR PREGUNTA MÚLTIPLE ===
+function cargarPreguntaMultiple(pregunta, cont) {
+    pregunta.opciones.forEach((opcion, index) => {
+        const btn = document.createElement('button');
+        btn.innerText = opcion;
+        btn.onclick = () => seleccionarOpcion(index, btn);
+        cont.appendChild(btn);
+    });
+}
+
+// === 11. CARGAR PREGUNTA SELECCIÓN MÚLTIPLE ===
+function cargarPreguntaSeleccionMultiple(pregunta, cont) {
+    pregunta.opciones.forEach((opcion, index) => {
+        const div = document.createElement('div');
+        div.className = 'checkbox-option';
+        div.innerHTML = `
+            <input type="checkbox" id="opt-${index}" value="${index}">
+            <label for="opt-${index}" style="cursor: pointer; flex: 1; margin: 0;">${opcion}</label>
+        `;
+        
+        const checkbox = div.querySelector('input');
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                div.classList.add('selected');
+                if (!seleccionesTemporales.includes(index)) {
+                    seleccionesTemporales.push(index);
+                }
+            } else {
+                div.classList.remove('selected');
+                seleccionesTemporales = seleccionesTemporales.filter(i => i !== index);
+            }
+            
+            if (seleccionesTemporales.length > 0) {
+                btnNextQuestion.classList.remove('hidden');
+            } else {
+                btnNextQuestion.classList.add('hidden');
+            }
+        });
+        
+        cont.appendChild(div);
+    });
+}
+
+// === 12. CARGAR PREGUNTA EMPAREJAMIENTO ===
+function cargarPreguntaEmparejamiento(pregunta, cont) {
+    const matchingDiv = document.createElement('div');
+    matchingDiv.className = 'matching-container';
+    
+    const derechas = [...pregunta.pares.map(p => p.derecha)].sort(() => 0.5 - Math.random());
+    
+    pregunta.pares.forEach((par, index) => {
+        const pairDiv = document.createElement('div');
+        pairDiv.className = 'matching-pair';
+        
+        const select = document.createElement('select');
+        select.id = `match-${index}`;
+        select.innerHTML = '<option value="">Seleccione...</option>';
+        derechas.forEach((derecha, idx) => {
+            select.innerHTML += `<option value="${idx}">${derecha}</option>`;
+        });
+        
+        select.addEventListener('change', verificarEmparejamientoCompleto);
+        
+        pairDiv.innerHTML = `
+            <div class="matching-left">${par.izquierda}</div>
+            <div class="matching-arrow">→</div>
+            <div class="matching-right"></div>
+        `;
+        
+        pairDiv.querySelector('.matching-right').appendChild(select);
+        matchingDiv.appendChild(pairDiv);
+    });
+    
+    cont.appendChild(matchingDiv);
+}
+
+function verificarEmparejamientoCompleto() {
+    const pregunta = preguntasExamen[indiceActual];
+    const selects = document.querySelectorAll('[id^="match-"]');
+    let todosCompletos = true;
+    
+    selects.forEach(select => {
+        if (!select.value) todosCompletos = false;
+    });
+    
+    if (todosCompletos) {
+        btnNextQuestion.classList.remove('hidden');
+    } else {
+        btnNextQuestion.classList.add('hidden');
+    }
+}
+
+// === 13. SELECCIONAR OPCIÓN ===
+function seleccionarOpcion(index, btnClickeado) {
+    const isStudyMode = document.getElementById('mode-select').value === 'study';
+
+    if (isStudyMode && seleccionTemporal !== null) {
+        return;
+    }
+    
+    seleccionTemporal = index;
+    const botones = document.getElementById('options-container').querySelectorAll('button');
+    botones.forEach(b => b.classList.remove('option-selected'));
+    btnClickeado.classList.add('option-selected');
+    
+    if (isStudyMode) {
+        mostrarResultadoInmediato(index);
+    } else {
+        btnNextQuestion.classList.remove('hidden');
+    }
+}
+
+// === 14. MOSTRAR RESULTADO INMEDIATO (MODO ESTUDIO) ===
+function mostrarResultadoInmediato(seleccionada) {
+    const pregunta = preguntasExamen[indiceActual];
+    const correcta = pregunta.respuesta;
+    const cont = document.getElementById('options-container');
+    const botones = cont.querySelectorAll('button');
+    
+    botones.forEach(btn => btn.disabled = true);
+
+    botones.forEach((btn, index) => {
+        btn.classList.remove('option-selected');
+        
+        if (index === correcta) {
+            btn.classList.add('ans-correct', 'feedback-visible');
+        } else if (index === seleccionada) {
+            btn.classList.add('ans-wrong', 'feedback-visible');
+        }
+    });
+
+    const divExplicacion = document.createElement('div');
+    divExplicacion.className = 'explanation-feedback';
+    divExplicacion.innerHTML = `<strong>Explicación:</strong> ${pregunta.explicacion}`;
+    cont.appendChild(divExplicacion);
+    
+    respuestasUsuario.push(seleccionada);
+    btnNextQuestion.classList.remove('hidden');
+}
+
+// === 15. BOTÓN SIGUIENTE ===
+btnNextQuestion.addEventListener('click', () => {
+    const isStudyMode = document.getElementById('mode-select').value === 'study';
+    const pregunta = preguntasExamen[indiceActual];
+    
+    if (isStudyMode && pregunta.tipo === 'multiple' && seleccionTemporal !== null) {
+        indiceActual++;
+        cargarPregunta();
+        return;
+    }
+    
+    if (pregunta.tipo === 'multiple_seleccion') {
+        respuestasUsuario.push([...seleccionesTemporales]);
+    } else if (pregunta.tipo === 'emparejamiento') {
+        const respuestaEmparejamiento = [];
+        pregunta.pares.forEach((par, idx) => {
+            const select = document.getElementById(`match-${idx}`);
+            respuestaEmparejamiento.push(parseInt(select.value));
+        });
+        respuestasUsuario.push(respuestaEmparejamiento);
+    } else if (pregunta.tipo === 'multiple' && seleccionTemporal !== null) {
+        respuestasUsuario.push(seleccionTemporal);
+    }
+    
+    indiceActual++;
+    cargarPregunta();
+});
+
+// === 16. RELOJ ===
+function iniciarReloj() {
+    intervaloTiempo = setInterval(() => {
+        tiempoRestante--;
+        let m = Math.floor(tiempoRestante / 60), s = tiempoRestante % 60;
+        document.getElementById('timer-display').innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
+        if (tiempoRestante <= 0) { 
+            clearInterval(intervaloTiempo); 
+            terminarQuiz(); 
+        }
+    }, 1000);
+}
+
+// === 17. TERMINAR QUIZ ===
+function terminarQuiz() {
+    clearInterval(intervaloTiempo);
+    let aciertos = 0;
+    
+    preguntasExamen.forEach((p, i) => {
+        if (p.tipo === 'multiple') {
+            if (respuestasUsuario[i] === p.respuesta) aciertos++;
+        } else if (p.tipo === 'multiple_seleccion') {
+            const respUsuario = respuestasUsuario[i] || [];
+            const correctas = p.respuestas_correctas || [];
+            if (JSON.stringify(respUsuario.sort()) === JSON.stringify(correctas.sort())) {
+                aciertos++;
+            }
+        } else if (p.tipo === 'emparejamiento') {
+            const respUsuario = respuestasUsuario[i] || [];
+            let correcto = true;
+            p.pares.forEach((par, idx) => {
+                const derechas = p.pares.map(p => p.derecha);
+                if (derechas[respUsuario[idx]] !== par.derecha) {
+                    correcto = false;
+                }
+            });
+            if (correcto) aciertos++;
+        }
+    });
+    
+    quizScreen.classList.add('hidden');
+    resultScreen.classList.remove('hidden');
+    document.getElementById('score-final').innerText = `${aciertos} / ${preguntasExamen.length}`;
+    
+    const modeSelect = document.getElementById('mode-select');
+    if (modeSelect && modeSelect.value === 'study') {
+        document.getElementById('btn-review').classList.add('hidden');
+    } else {
+        document.getElementById('btn-review').classList.remove('hidden');
+    }
+}
+
+// === 18. REVISIÓN ===
+document.getElementById('btn-review').addEventListener('click', () => {
+    resultScreen.classList.add('hidden');
+    reviewScreen.classList.remove('hidden');
+    const cont = document.getElementById('review-container');
+    cont.innerHTML = '';
+    
+    preguntasExamen.forEach((p, i) => {
+        const card = document.createElement('div');
+        card.className = 'review-item';
+        
+        const tiposTexto = {
+            'multiple': '📝 Opción Múltiple',
+            'multiple_seleccion': '☑️ Selección Múltiple',
+            'emparejamiento': '🔗 Emparejamiento'
+        };
+        
+        let contenido = `
+            <div class="review-type-badge">${tiposTexto[p.tipo]}</div>
+            <div class="review-question">${i+1}. ${p.pregunta}</div>
+        `;
+        
+        if (p.tipo === 'multiple') {
+            const dada = respuestasUsuario[i];
+            const ok = (dada === p.respuesta);
+            let ops = '';
+            p.opciones.forEach((o, x) => {
+                let c = (x === p.respuesta) ? 'ans-correct' : (x === dada && !ok ? 'ans-wrong' : '');
+                let ico = (x === p.respuesta) ? '✅ ' : (x === dada && !ok ? '❌ ' : '');
+                let b = (x === dada) ? 'user-selected' : '';
+                ops += `<div class="review-answer ${c} ${b}">${ico}${o}</div>`;
+            });
+            contenido += ops;
+        } else if (p.tipo === 'multiple_seleccion') {
+            const respUsuario = respuestasUsuario[i] || [];
+            const correctas = p.respuestas_correctas || [];
+            p.opciones.forEach((o, x) => {
+                const esCorrecta = correctas.includes(x);
+                const fueSeleccionada = respUsuario.includes(x);
+                let c = '';
+                let ico = '';
+                let b = '';
+                
+                if (esCorrecta && fueSeleccionada) {
+                    c = 'ans-correct';
+                    ico = '✅ ';
+                    b = 'user-selected';
+                } else if (esCorrecta && !fueSeleccionada) {
+                    c = 'ans-correct';
+                    ico = '✅ ';
+                } else if (!esCorrecta && fueSeleccionada) {
+                    c = 'ans-wrong';
+                    ico = '❌ ';
+                    b = 'user-selected';
+                }
+                
+                contenido += `<div class="review-answer ${c} ${b}">${ico}${o}</div>`;
+            });
+        } else if (p.tipo === 'emparejamiento') {
+            const respUsuario = respuestasUsuario[i] || [];
+            const derechas = p.pares.map(par => par.derecha);
+            contenido += '<div class="review-matching">';
+            p.pares.forEach((par, idx) => {
+                const seleccionUsuario = derechas[respUsuario[idx]] || 'Sin selección';
+                const esCorrecta = seleccionUsuario === par.derecha;
+                const clase = esCorrecta ? 'ans-correct' : 'ans-wrong';
+                const ico = esCorrecta ? '✅' : '❌';
+                
+                contenido += `
+                    <div class="review-matching-pair ${clase}">
+                        <div class="review-matching-left">${par.izquierda}</div>
+                        <div class="review-matching-arrow">→</div>
+                        <div class="review-matching-right">${ico} ${seleccionUsuario}</div>
+                    </div>
+                `;
+                if (!esCorrecta) {
+                    contenido += `<div style="padding: 5px 10px; font-size: 0.8rem; color: #28a745;">✓ Correcto: ${par.derecha}</div>`;
+                }
+            });
+            contenido += '</div>';
+        }
+        
+        contenido += `<div class="review-explanation"><strong>Explicación:</strong> ${p.explicacion}</div>`;
+        card.innerHTML = contenido;
+        cont.appendChild(card);
+    });
+});
